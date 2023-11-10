@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/onboarding_flow_nav_graph"
+    app:startDestination="@id/fullNameFragment">
+
+    <fragment
+        android:id="@+id/fullNameFragment"
+        android:name="com.cradlecare.onboarding_module.fragments.FullNameFragment"
+        android:label="fragment_full_name"
+        tools:layout="@layout/fragment_full_name" />
+    <fragment
+        android:id="@+id/dobFragment"
+        android:name="com.cradlecare.onboarding_module.fragments.DobFragment"
+        android:label="fragment_dob"
+        tools:layout="@layout/fragment_dob" />
+    <fragment
+        android:id="@+id/addressFragment"
+        android:name="com.cradlecare.onboarding_module.fragments.AddressFragment"
+        android:label="fragment_address"
+        tools:layout="@layout/fragment_address" />
+    <fragment
+        android:id="@+id/pregnancyDetailsFragment"
+        android:name="com.cradlecare.onboarding_module.fragments.PregnancyDetailsFragment"
+        android:label="fragment_pregnancy_details"
+        tools:layout="@layout/fragment_pregnancy_details" />
+    <fragment
+        android:id="@+id/kycIntroFragment"
+        android:name="com.cradlecare.onboarding_module.fragments.KycIntroFragment"
+        android:label="fragment_kyc_intro"
+        tools:layout="@layout/fragment_kyc_intro" />
+</navigation>

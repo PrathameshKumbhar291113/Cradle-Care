@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "88777470254",
+    "project_id": "cradlecare-a620a",
+    "storage_bucket": "cradlecare-a620a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:88777470254:android:f9b7db111c3e90af170abf",
+        "android_client_info": {
+          "package_name": "com.cradlecare"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDktgwhHrDTOH-Xug50CeNRNOvy4JMaLjA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
