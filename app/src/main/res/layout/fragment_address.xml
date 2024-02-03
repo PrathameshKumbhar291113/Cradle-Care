@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login_module.fragments.VerifyOTPFragment">
+    tools:context=".onboarding_module.fragments.AddressFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvOnboardingTitle"
@@ -39,29 +39,30 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@id/userPinCodeTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivLogo" />
 
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/userOtpTitle"
+        android:id="@+id/userPinCodeTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="18dp"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/aref_ruqaa"
-        android:text="Full Address"
+        android:text="Resedential Pincode"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@id/userOtpEditText"
+        app:layout_constraintBottom_toTopOf="@id/userPinCodeValue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvStepTitle"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/userOtpEditText"
+        android:id="@+id/userPinCodeValue"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -69,17 +70,29 @@
         android:layout_marginBottom="299dp"
         android:background="@drawable/shape_white_corner_5dp"
         android:elevation="10dp"
-        android:hint="Enter Address Here"
-        android:inputType="text"
+        android:hint="Enter Your Pincode Here"
+        android:maxLength="6"
+        android:inputType="phone"
         android:paddingHorizontal="8dp"
         android:paddingVertical="15dp"
         android:stateListAnimator="@null"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/btnNext"
-        app:layout_constraintEnd_toEndOf="@+id/userOtpTitle"
+        app:layout_constraintEnd_toEndOf="@+id/userPinCodeTitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userOtpTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/userPinCodeTitle" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="24dp"
+        android:layout_height="0dp"
+        android:elevation="15dp"
+        android:src="@drawable/iv_location"
+        app:layout_constraintBottom_toBottomOf="@+id/userPinCodeValue"
+        app:layout_constraintEnd_toEndOf="@+id/userPinCodeValue"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="@+id/userPinCodeValue"
+        app:layout_constraintTop_toTopOf="@+id/userPinCodeValue" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnNext"

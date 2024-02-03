@@ -1,13 +1,16 @@
 package com.cradlecare.onboarding_module.fragments
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.cradlecare.R
 import com.cradlecare.databinding.FragmentFullNameBinding
+import com.resq360.utils.BundleConstants
 
 class FullNameFragment : Fragment() {
 
@@ -31,8 +34,16 @@ class FullNameFragment : Fragment() {
     }
 
     private fun setUpUi() {
+
         binding.btnNext.setOnClickListener {
-            findNavController().navigate(R.id.dobFragment)
+            if (!binding.userFullNameValue.text.isNullOrBlank() || !binding.userFullNameValue.text.isNullOrEmpty()) {
+                val sharePrefFullName : SharedPreferences = requireContext().getSharedPreferences(BundleConstants.NAME, Context.MODE_PRIVATE)
+                var editorFullName : SharedPreferences.Editor = sharePrefFullName.edit()
+                editorFullName.putString(BundleConstants.USER_FULL_NAME,
+                    binding.userFullNameValue.text?.trim().toString())
+                editorFullName.apply()
+                findNavController().navigate(R.id.dobFragment)
+            }
         }
     }
 }

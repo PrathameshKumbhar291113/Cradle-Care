@@ -1,14 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".onboarding_module.fragments.KycIntroFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/progressBarContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <com.mikhaellopez.circularprogressbar.CircularProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:cpb_background_progressbar_color="@color/white"
+            app:cpb_background_progressbar_width="10dp"
+            app:cpb_indeterminate_mode="true"
+            app:cpb_progressbar_color_direction="top_to_bottom"
+            app:cpb_progressbar_color_end="@color/pink_fam_400"
+            app:cpb_progressbar_color_start="@color/rose_fam_300"
+            app:cpb_progressbar_width="10dp"
+            app:cpb_round_border="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOnboardingTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/aref_ruqaa"
+            android:text="Onboarding"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvOnboardingTitle"
+            app:srcCompat="@drawable/cradlecarelogo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvStepTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            android:fontFamily="@font/aref_ruqaa"
+            android:text="Step 4/5"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toTopOf="@id/userAadharCardNumberTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivLogo"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <!--<androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/userKycTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/aref_ruqaa"
+            android:text="User KYC"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:layout_marginVertical="20dp"
+            app:layout_constraintBottom_toTopOf="@id/userAadharCardNumberTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvStepTitle"
+            app:layout_constraintVertical_chainStyle="packed" />-->
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/userAadharCardNumberTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18dp"
+            android:fontFamily="@font/aref_ruqaa"
+            android:text="Aadhar Number"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toTopOf="@id/userAadharCardNumberValue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvStepTitle"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/userAadharCardNumberValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/shape_white_corner_5dp"
+            android:elevation="10dp"
+            android:hint="Enter Your Aadhar Number Here"
+            android:inputType="phone"
+            android:maxLength="12"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="15dp"
+            android:stateListAnimator="@null"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/userPanCardNumberTitle"
+            app:layout_constraintEnd_toEndOf="@+id/userAadharCardNumberTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userAadharCardNumberTitle" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="24dp"
+            android:layout_height="0dp"
+            android:elevation="15dp"
+            android:src="@drawable/iv_user_id_card"
+            app:layout_constraintBottom_toBottomOf="@+id/userAadharCardNumberValue"
+            app:layout_constraintEnd_toEndOf="@+id/userAadharCardNumberValue"
+            app:layout_constraintHorizontal_bias="0.95"
+            app:layout_constraintStart_toStartOf="@+id/userAadharCardNumberValue"
+            app:layout_constraintTop_toTopOf="@+id/userAadharCardNumberValue" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/userPanCardNumberTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/aref_ruqaa"
+            android:text="Pan Number"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@id/userPanCardNumberValue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userAadharCardNumberValue"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/userPanCardNumberValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="200dp"
+            android:background="@drawable/shape_white_corner_5dp"
+            android:elevation="10dp"
+            android:hint="Enter Your Pan Number Here"
+            android:inputType="textCapCharacters"
+            android:maxLength="10"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="15dp"
+            android:stateListAnimator="@null"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/btnNext"
+            app:layout_constraintEnd_toEndOf="@+id/userPanCardNumberTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userPanCardNumberTitle" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="24dp"
+            android:layout_height="0dp"
+            android:elevation="15dp"
+            android:src="@drawable/iv_user_id_card"
+            app:layout_constraintBottom_toBottomOf="@+id/userPanCardNumberValue"
+            app:layout_constraintEnd_toEndOf="@+id/userPanCardNumberValue"
+            app:layout_constraintHorizontal_bias="0.95"
+            app:layout_constraintStart_toStartOf="@+id/userPanCardNumberValue"
+            app:layout_constraintTop_toTopOf="@+id/userPanCardNumberValue" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnVerify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="40dp"
+            android:alpha="0.5"
+            android:background="@drawable/shape_layer_button"
+            android:text="Verify"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.8" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="40dp"
+            android:alpha="0.5"
+            android:visibility="invisible"
+            android:background="@drawable/shape_layer_button"
+            android:text="Next"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.8" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,4 +14,5 @@
     <color name="red_fam_400">#f87171</color>
     <color name="grey_dark">#7D7E7F</color>
     <color name="rose_fam_600">#EEA9B3</color>
+    <color name="transparent_color">#00000000</color>
 </resources>

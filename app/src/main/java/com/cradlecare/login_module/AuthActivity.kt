@@ -1,7 +1,8 @@
 package com.cradlecare.login_module
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.cradlecare.R
 import com.cradlecare.databinding.ActivityAuthBinding
 
 class AuthActivity : AppCompatActivity() {
@@ -10,6 +11,8 @@ class AuthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        window.statusBarColor = getColor(R.color.rose_fam_400)
     }
 
     override fun onBackPressed() {

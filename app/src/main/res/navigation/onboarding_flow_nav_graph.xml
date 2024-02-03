@@ -21,13 +21,13 @@
         android:label="fragment_address"
         tools:layout="@layout/fragment_address" />
     <fragment
-        android:id="@+id/pregnancyDetailsFragment"
-        android:name="com.cradlecare.onboarding_module.fragments.PregnancyDetailsFragment"
-        android:label="fragment_pregnancy_details"
-        tools:layout="@layout/fragment_pregnancy_details" />
-    <fragment
         android:id="@+id/kycIntroFragment"
         android:name="com.cradlecare.onboarding_module.fragments.KycIntroFragment"
         android:label="fragment_kyc_intro"
         tools:layout="@layout/fragment_kyc_intro" />
+    <fragment
+        android:id="@+id/pregnancyDetailsFragment"
+        android:name="com.cradlecare.onboarding_module.fragments.PregnancyDetailsFragment"
+        android:label="fragment_pregnancy_details"
+        tools:layout="@layout/fragment_pregnancy_details" />
 </navigation>

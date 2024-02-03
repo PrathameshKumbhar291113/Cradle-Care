@@ -1,14 +1,14 @@
 package com.cradlecare.login_module.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.os.bundleOf
-import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.cradlecare.R
 import com.cradlecare.databinding.FragmentSignInSignUpBinding
@@ -20,6 +20,8 @@ import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
 import com.resq360.utils.hideKeyboard
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
 
 class SignInSignUpFragment : Fragment() {
@@ -64,12 +66,10 @@ class SignInSignUpFragment : Fragment() {
             requireActivity().hideKeyboard()
             binding.userMobileNumberEditText.text?.let {
                 if (it.isNullOrEmpty() || it.isNullOrBlank()) {
-
+                    Toast.makeText(requireContext(), "Mobile Field Cannot Be Empty.", Toast.LENGTH_SHORT).show()
                 } else if (it.length < 10) {
-
+                    Toast.makeText(requireContext(), "Mobile No. provided is less than 10 digits.", Toast.LENGTH_SHORT).show()
                 } else  {
-                    binding.mainContainer.isVisible = false
-                    binding.progressBarContainer.isVisible = true
                     sendOtp("+91${it.toString().trim()}")
                 }
             }
@@ -94,22 +94,23 @@ class SignInSignUpFragment : Fragment() {
 //                    errorToast("Quota exceeded.")
                     Toast.makeText(requireContext(),"Quota exceeded.",Toast.LENGTH_SHORT).show()
                 }
-                binding.mainContainer.isVisible = true
-                binding.progressBarContainer.isVisible = false
             }
 
             override fun onCodeSent(
                 verificationId: String,
                 token: PhoneAuthProvider.ForceResendingToken
             ) {
-                Toast.makeText(requireContext(),"OTP Send Successfully!!!",Toast.LENGTH_SHORT).show()
-                _verificationId = verificationId
-                resendToken = token
+                lifecycleScope.launch {
+                    Toast.makeText(requireContext(),"OTP Send Successfully!!!",Toast.LENGTH_SHORT).show()
+                    delay(1000)
+                    _verificationId = verificationId
+                    resendToken = token
 
-                val bundle = bundleOf(
-                    VerifyOTPFragment.USER_VERIFICATION_ID to _verificationId
-                )
-                findNavController().navigate(R.id.verifyOTPFragment,bundle)
+                    val bundle = bundleOf(
+                        VerifyOTPFragment.USER_VERIFICATION_ID to _verificationId
+                    )
+                    findNavController().navigate(R.id.verifyOTPFragment,bundle)
+                }
             }
         }
     }

@@ -1,18 +1,20 @@
 package com.cradlecare.login_module.fragments
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
-import androidx.navigation.fragment.findNavController
-import com.cradlecare.R
+import androidx.fragment.app.Fragment
 import com.cradlecare.databinding.FragmentVerifyOtpBinding
 import com.cradlecare.onboarding_module.OnboardingActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
+import com.resq360.utils.BundleConstants
 import com.resq360.utils.hideKeyboard
 import splitties.fragments.start
 
@@ -64,9 +66,11 @@ class VerifyOTPFragment : Fragment() {
             binding.userOtpEditText.text?.let {
                 if (it.isNullOrBlank() || it.isNullOrEmpty()) {
 //                    errorToast("OTP Cannot Be Empty!!!")
+                    Toast.makeText(requireContext(), "OTP Field Cannot Be Empty.", Toast.LENGTH_SHORT).show()
 //                    disableSubmitButton()
                 } else if (it.length < 6) {
 //                    errorToast("OTP entered is less than 6 Digits!!!")
+                    Toast.makeText(requireContext(), "OTP provided is less than 6 digits.", Toast.LENGTH_SHORT).show()
 //                    disableSubmitButton()
                 } else {
                     val credential : PhoneAuthCredential = PhoneAuthProvider.getCredential(_verificationId, it.toString().trim())
@@ -80,6 +84,11 @@ class VerifyOTPFragment : Fragment() {
         auth.signInWithCredential(credential).addOnCompleteListener(requireActivity()) { task ->
             if (task.isSuccessful) {
                 //api call to check if existing user or not
+                val sharePrefLogin : SharedPreferences = requireContext().getSharedPreferences(BundleConstants.LOGIN, Context.MODE_PRIVATE)
+                var editor : SharedPreferences.Editor = sharePrefLogin.edit()
+                editor.putBoolean(BundleConstants.IS_LOGIN_COMPLETED,true)
+                editor.apply()
+
                 start<OnboardingActivity>()
             } else {
 //                errorToast(task.exception?.message.toString())
