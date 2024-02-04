@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".CradleCareApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -12,13 +13,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CradleCare"
         tools:targetApi="31">
-
-        <activity android:name=".onboarding_module.OnboardingActivity"
+        <activity
+            android:name=".chat_bot_module.MumsMateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home_module.presentation.HomeActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".login_module.AuthActivity"
+            android:name=".onboarding_module.presentation.OnboardingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".login_module.presentation.AuthActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
@@ -26,7 +35,7 @@
             android:name=".SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" >
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".onboarding_module.fragments.FullNameFragment">
-
+    tools:context=".onboarding_module.presentation.fragments.FullNameFragment">
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvOnboardingTitle"
         android:layout_width="match_parent"
@@ -35,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:fontFamily="@font/aref_ruqaa"
-        android:text="Step 1/5"
+        android:text="Step 1/4"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="30dp"

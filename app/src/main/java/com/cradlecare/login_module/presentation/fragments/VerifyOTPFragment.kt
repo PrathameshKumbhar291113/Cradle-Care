@@ -1,4 +1,4 @@
-package com.cradlecare.login_module.fragments
+package com.cradlecare.login_module.presentation.fragments
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -10,14 +10,16 @@ import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import com.cradlecare.databinding.FragmentVerifyOtpBinding
-import com.cradlecare.onboarding_module.OnboardingActivity
+import com.cradlecare.onboarding_module.presentation.OnboardingActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
 import com.resq360.utils.BundleConstants
 import com.resq360.utils.hideKeyboard
+import dagger.hilt.android.AndroidEntryPoint
 import splitties.fragments.start
 
+@AndroidEntryPoint
 class VerifyOTPFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: FragmentVerifyOtpBinding

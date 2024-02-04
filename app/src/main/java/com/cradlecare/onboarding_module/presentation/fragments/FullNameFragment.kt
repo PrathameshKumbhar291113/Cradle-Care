@@ -1,4 +1,4 @@
-package com.cradlecare.onboarding_module.fragments
+package com.cradlecare.onboarding_module.presentation.fragments
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -11,7 +11,9 @@ import androidx.navigation.fragment.findNavController
 import com.cradlecare.R
 import com.cradlecare.databinding.FragmentFullNameBinding
 import com.resq360.utils.BundleConstants
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FullNameFragment : Fragment() {
 
     private lateinit var binding: FragmentFullNameBinding

@@ -7,13 +7,15 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.cradlecare.databinding.ActivitySplashBinding
-import com.cradlecare.login_module.AuthActivity
-import com.cradlecare.onboarding_module.OnboardingActivity
+import com.cradlecare.login_module.presentation.AuthActivity
+import com.cradlecare.onboarding_module.presentation.OnboardingActivity
 import com.resq360.utils.BundleConstants
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import splitties.activities.start
 
+@AndroidEntryPoint
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashBinding

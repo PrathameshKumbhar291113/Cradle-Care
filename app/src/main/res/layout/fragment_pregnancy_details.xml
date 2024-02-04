@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".onboarding_module.fragments.PregnancyDetailsFragment">
+    tools:context=".onboarding_module.presentation.fragments.PregnancyDetailsFragment">
 
     <!--<androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/welcomeContainer"
@@ -105,7 +105,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
             android:fontFamily="@font/aref_ruqaa"
-            android:text="Step 5/5"
+            android:text="Step 4/4"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="30dp"
@@ -191,14 +191,14 @@
             android:text="Blood Group (Eg. A+)"
             android:textColor="@color/black"
             android:textSize="20dp"
-            app:layout_constraintBottom_toTopOf="@id/userPanCardNumberValue"
+            app:layout_constraintBottom_toTopOf="@id/userBloodGroupValue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/userPregnancyMonthValue"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/userPanCardNumberValue"
+            android:id="@+id/userBloodGroupValue"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
@@ -224,11 +224,11 @@
             android:layout_height="0dp"
             android:elevation="15dp"
             android:src="@drawable/iv_bloodtype"
-            app:layout_constraintBottom_toBottomOf="@+id/userPanCardNumberValue"
-            app:layout_constraintEnd_toEndOf="@+id/userPanCardNumberValue"
+            app:layout_constraintBottom_toBottomOf="@+id/userBloodGroupValue"
+            app:layout_constraintEnd_toEndOf="@+id/userBloodGroupValue"
             app:layout_constraintHorizontal_bias="0.95"
-            app:layout_constraintStart_toStartOf="@+id/userPanCardNumberValue"
-            app:layout_constraintTop_toTopOf="@+id/userPanCardNumberValue" />
+            app:layout_constraintStart_toStartOf="@+id/userBloodGroupValue"
+            app:layout_constraintTop_toTopOf="@+id/userBloodGroupValue" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSubmit"

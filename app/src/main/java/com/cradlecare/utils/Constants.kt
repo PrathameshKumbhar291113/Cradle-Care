@@ -29,4 +29,8 @@ object BundleConstants{
     const val USER_ADHAR_NUM = "userAdharNum"
     const val PAN_NUM = "panNum"
     const val USER_PAN_NUM = "userPanNum"
+    const val PREGNANCY_MONTH = "pregnancyMonth"
+    const val USER_PREGNANCY_MONTH = "userPregnancyMonth"
+    const val BLOOD_GROUP = "bloodGroup"
+    const val USER_BLOOD_GROUP = "userBloodGroup"
 }

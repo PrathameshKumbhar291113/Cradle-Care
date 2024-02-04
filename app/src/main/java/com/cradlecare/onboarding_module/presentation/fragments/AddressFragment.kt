@@ -1,4 +1,4 @@
-package com.cradlecare.onboarding_module.fragments
+package com.cradlecare.onboarding_module.presentation.fragments
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -11,7 +11,9 @@ import androidx.navigation.fragment.findNavController
 import com.cradlecare.R
 import com.cradlecare.databinding.FragmentAddressBinding
 import com.resq360.utils.BundleConstants
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AddressFragment : Fragment() {
 
     private lateinit var binding: FragmentAddressBinding
@@ -46,7 +48,7 @@ class AddressFragment : Fragment() {
                     binding.userPinCodeValue.text?.trim().toString()
                 )
                 editorAddress.apply()
-                findNavController().navigate(R.id.kycIntroFragment)
+                findNavController().navigate(R.id.pregnancyDetailsFragment)
             }
         }
     }

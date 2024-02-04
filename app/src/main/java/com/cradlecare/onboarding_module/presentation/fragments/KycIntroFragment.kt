@@ -1,4 +1,4 @@
-package com.cradlecare.onboarding_module.fragments
+package com.cradlecare.onboarding_module.presentation.fragments
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -15,9 +15,11 @@ import com.cradlecare.R
 import com.cradlecare.databinding.FragmentKycIntroBinding
 import com.cradlecare.utils.LoaderOverlay
 import com.resq360.utils.BundleConstants
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class KycIntroFragment : Fragment() {
     private lateinit var binding: FragmentKycIntroBinding
 

@@ -1,4 +1,4 @@
-package com.cradlecare.onboarding_module.fragments
+package com.cradlecare.onboarding_module.presentation.fragments
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -12,10 +12,12 @@ import com.cradlecare.R
 import com.cradlecare.databinding.FragmentDobBinding
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.resq360.utils.BundleConstants
+import dagger.hilt.android.AndroidEntryPoint
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
+@AndroidEntryPoint
 class DobFragment : Fragment() {
     private lateinit var binding: FragmentDobBinding
 

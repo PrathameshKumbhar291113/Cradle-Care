@@ -1,4 +1,4 @@
-package com.cradlecare.login_module.fragments
+package com.cradlecare.login_module.presentation.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -20,10 +20,12 @@ import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
 import com.resq360.utils.hideKeyboard
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
 
+@AndroidEntryPoint
 class SignInSignUpFragment : Fragment() {
     private lateinit var binding: FragmentSignInSignUpBinding
     private lateinit var auth: FirebaseAuth
