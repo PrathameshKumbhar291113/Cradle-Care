@@ -6,8 +6,9 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.cradlecare.auth_module.presentation.AuthActivity
 import com.cradlecare.databinding.ActivitySplashBinding
-import com.cradlecare.login_module.presentation.AuthActivity
+import com.cradlecare.home_module.presentation.HomeActivity
 import com.cradlecare.onboarding_module.presentation.OnboardingActivity
 import com.resq360.utils.BundleConstants
 import dagger.hilt.android.AndroidEntryPoint
@@ -30,14 +31,13 @@ class SplashActivity : AppCompatActivity() {
 
         window.statusBarColor = getColor(R.color.rose_fam_400)
 
-        val sharePrefSplash: SharedPreferences =
+        val sharePrefLogin: SharedPreferences =
             getSharedPreferences(BundleConstants.LOGIN, Context.MODE_PRIVATE)
         val sharePrefOnboarded: SharedPreferences =
-            getSharedPreferences("onBoardCheck", Context.MODE_PRIVATE)
+            getSharedPreferences(BundleConstants.ONBOARDING, Context.MODE_PRIVATE)
 
-        var isLoginCompleted = sharePrefSplash.getBoolean(BundleConstants.IS_LOGIN_COMPLETED, false)
-        var isOnBoardingCompleted =
-            sharePrefOnboarded.getBoolean(BundleConstants.IS_ONBOARDING_COMPLETED, false)
+        var isLoginCompleted = sharePrefLogin.getBoolean(BundleConstants.IS_LOGIN_COMPLETED, false)
+        var isOnBoardingCompleted = sharePrefOnboarded.getBoolean(BundleConstants.IS_ONBOARDING_COMPLETED, false)
 
         if (!isLoginCompleted) {
             lifecycleScope.launch {
@@ -53,6 +53,11 @@ class SplashActivity : AppCompatActivity() {
             }
         } else if (isLoginCompleted && isOnBoardingCompleted){
             //Home activity
+            lifecycleScope.launch {
+                delay(5000)
+                start<HomeActivity>()
+                finish()
+            }
         }
     }
 }

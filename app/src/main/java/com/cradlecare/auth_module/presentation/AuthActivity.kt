@@ -1,4 +1,4 @@
-package com.cradlecare.login_module.presentation
+package com.cradlecare.auth_module.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

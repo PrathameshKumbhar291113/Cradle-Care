@@ -1,4 +1,4 @@
-package com.cradlecare.login_module.presentation.fragments
+package com.cradlecare.auth_module.presentation.fragments
 
 import android.content.Context
 import android.content.SharedPreferences

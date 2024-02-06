@@ -3,6 +3,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".home_module.presentation.HomeActivity">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/rose_fam_400"
+        android:fontFamily="@font/aref_ruqaa_bold"
+        android:paddingStart="30dp"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolBar"
+        app:layout_constraintVertical_bias="0.0"
+        app:navGraph="@navigation/home_flow_nav_graph"
+        tools:layout="@layout/fragment_home" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:itemRippleColor="@color/palate_titan_white"
+        android:background="@color/palate_big_stone"
+        app:itemIconTint="@color/palate_titan_white"
+        app:menu="@menu/home_menu"
+        app:labelVisibilityMode="selected"
+        app:itemTextColor="@color/palate_titan_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragmentContainerView"
+        app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

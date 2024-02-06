@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/signInSignUpFragment"
-        android:name="com.cradlecare.login_module.presentation.fragments.SignInSignUpFragment"
+        android:name="com.cradlecare.auth_module.presentation.fragments.SignInSignUpFragment"
         android:label="fragment_sign_in_sign_up"
         tools:layout="@layout/fragment_sign_in_sign_up" />
     <fragment
         android:id="@+id/verifyOTPFragment"
-        android:name="com.cradlecare.login_module.presentation.fragments.VerifyOTPFragment"
+        android:name="com.cradlecare.auth_module.presentation.fragments.VerifyOTPFragment"
         android:label="fragment_verify_otp"
         tools:layout="@layout/fragment_verify_otp" />
 </navigation>

@@ -14,7 +14,7 @@
         android:theme="@style/Theme.CradleCare"
         tools:targetApi="31">
         <activity
-            android:name=".chat_bot_module.MumsMateActivity"
+            android:name=".chat_bot_module.presentation.MumsMateActivity"
             android:exported="false" />
         <activity
             android:name=".home_module.presentation.HomeActivity"
@@ -27,7 +27,7 @@
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".login_module.presentation.AuthActivity"
+            android:name=".auth_module.presentation.AuthActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />

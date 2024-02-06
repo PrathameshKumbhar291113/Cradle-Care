@@ -1,4 +1,4 @@
-package com.cradlecare.login_module.presentation.fragments
+package com.cradlecare.auth_module.presentation.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

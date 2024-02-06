@@ -10,5 +10,10 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        setupUi()
+    }
+
+    private fun setupUi() {
+        window.statusBarColor = getColor(R.color.rose_fam_400)
     }
 }

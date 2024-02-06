@@ -19,6 +19,7 @@ object BundleConstants{
     const val IS_LOGIN_COMPLETED = "isLoginCompleted"
     const val LOGIN = "login"
     const val IS_ONBOARDING_COMPLETED = "isOnboardingCompleted"
+    const val ONBOARDING = "onboarding"
     const val USER_FULL_NAME = "userFullName"
     const val NAME = "name"
     const val DOB = "dob"

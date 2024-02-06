@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login_module.presentation.AuthActivity">
+    tools:context=".auth_module.presentation.AuthActivity">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/authFragmentContainer"

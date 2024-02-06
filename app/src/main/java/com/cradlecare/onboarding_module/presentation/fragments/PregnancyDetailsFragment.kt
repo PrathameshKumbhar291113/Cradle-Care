@@ -8,8 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.cradlecare.databinding.FragmentPregnancyDetailsBinding
+import com.cradlecare.home_module.presentation.HomeActivity
 import com.resq360.utils.BundleConstants
 import dagger.hilt.android.AndroidEntryPoint
+import splitties.fragments.start
 
 @AndroidEntryPoint
 class PregnancyDetailsFragment : Fragment() {
@@ -51,6 +53,16 @@ class PregnancyDetailsFragment : Fragment() {
                 BundleConstants.USER_BLOOD_GROUP,
                 binding.userBloodGroupValue.text?.trim().toString())
             editorBloodGroup.apply()
+
+            val sharePrefOnboarding : SharedPreferences = requireContext().getSharedPreferences(
+                BundleConstants.ONBOARDING, Context.MODE_PRIVATE)
+            var editorOnboarding : SharedPreferences.Editor = sharePrefOnboarding.edit()
+            editorOnboarding.putBoolean(
+                BundleConstants.IS_ONBOARDING_COMPLETED, true
+            )
+            editorOnboarding.apply()
+
+            start<HomeActivity>()
         }
     }
 }
