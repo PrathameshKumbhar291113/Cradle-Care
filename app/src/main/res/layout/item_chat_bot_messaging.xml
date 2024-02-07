@@ -5,15 +5,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="8dp">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineForLeftChatView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineForRightChatView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15"/>
+
     <LinearLayout
         android:id="@+id/left_chat_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/shape_message_bg"
+        android:background="@drawable/shape_chat_bot_response_bg"
         android:orientation="vertical"
         android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/right_chat_view"
+        app:layout_constraintEnd_toStartOf="@id/guidelineForLeftChatView"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -30,12 +45,13 @@
         android:id="@+id/right_chat_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/shape_chat_gpt_message_bg"
+        android:background="@drawable/shape_chat_bot_message_bg"
         android:orientation="vertical"
         android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/left_chat_view"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/guidelineForRightChatView"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView

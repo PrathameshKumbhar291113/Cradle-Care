@@ -3,14 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <item
+        android:icon="@drawable/iv_home"
         android:id="@+id/homeFragment"
         android:title="Home"
         tools:ignore="HardcodedText" />
     <item
+        android:icon="@drawable/iv_mums_mate"
+        android:id="@+id/mumsMateFragment"
+        android:title="Mums Mate"
+        tools:ignore="HardcodedText" />
+    <item
+        android:icon="@drawable/iv_sos"
         android:id="@+id/sosFragment"
         android:title="SOS"
         tools:ignore="HardcodedText" />
     <item
+        android:icon="@drawable/iv_user"
         android:id="@+id/profileFragment"
         android:title="Profile"
         tools:ignore="HardcodedText" />

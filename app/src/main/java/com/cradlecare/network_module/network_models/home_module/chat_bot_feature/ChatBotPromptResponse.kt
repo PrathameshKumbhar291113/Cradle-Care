@@ -1,4 +1,4 @@
-package com.cradlecare.network_module.models.chat_gpt_module
+package com.cradlecare.network_module.network_models.home_module.chat_bot_feature
 
 
 import android.os.Parcelable
@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class ChatGptPromptResponse(
+data class ChatBotPromptResponse(
     @SerializedName("choices")
     var choices: List<Choice?>?,
     @SerializedName("created")

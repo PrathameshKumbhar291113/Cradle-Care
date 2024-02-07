@@ -20,4 +20,9 @@
         android:name="com.cradlecare.home_module.presentation.fragments.SosFragment"
         android:label="fragment_sos"
         tools:layout="@layout/fragment_sos" />
+    <fragment
+        android:id="@+id/mumsMateFragment"
+        android:name="com.cradlecare.home_module.presentation.fragments.MumsMateFragment"
+        android:label="fragment_mums_mate"
+        tools:layout="@layout/fragment_mums_mate" />
 </navigation>

@@ -2,9 +2,11 @@ package com.cradlecare.utils
 
 object ApiConstantsCradleCare{
     const val BASE_URL = ""
-    const val CHAT_GPT_BASE_URL = "https://api.openai.com"
+    const val CHAT_BOT_BASE_URL = "https://api.openai.com"
 //    const val OPEN_AI_CHAT_GPT_API_KEY = "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" // expired
     const val OPEN_AI_CHAT_GPT_API_KEY = "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"
+
+
 
 
     /*

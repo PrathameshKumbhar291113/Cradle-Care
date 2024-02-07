@@ -14,7 +14,7 @@
         android:theme="@style/Theme.CradleCare"
         tools:targetApi="31">
         <activity
-            android:name=".chat_bot_module.presentation.MumsMateActivity"
+            android:name=".home_module.presentation.fragments.MumsMateActivity"
             android:exported="false" />
         <activity
             android:name=".home_module.presentation.HomeActivity"
