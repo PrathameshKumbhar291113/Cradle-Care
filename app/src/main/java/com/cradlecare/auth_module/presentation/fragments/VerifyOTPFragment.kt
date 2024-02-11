@@ -1,5 +1,6 @@
 package com.cradlecare.auth_module.presentation.fragments
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -7,8 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import com.cradlecare.R
 import com.cradlecare.databinding.FragmentVerifyOtpBinding
 import com.cradlecare.onboarding_module.presentation.OnboardingActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -17,6 +21,8 @@ import com.google.firebase.auth.PhoneAuthProvider
 import com.resq360.utils.BundleConstants
 import com.resq360.utils.hideKeyboard
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import splitties.fragments.start
 
 @AndroidEntryPoint
@@ -51,13 +57,16 @@ class VerifyOTPFragment : Fragment() {
         setupUI()
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private fun setupUI() {
         auth = FirebaseAuth.getInstance()
         binding.userOtpEditText.doOnTextChanged { text, start, before, count ->
             text?.let {
                 if (it.length < 6) {
 //                    disableSubmitButton()
+                    binding.btnVerify.background = resources.getDrawable(R.drawable.shape_layer_button_disabled)
                 } else if (it.length == 6) {
+                    binding.btnVerify.background = resources.getDrawable(R.drawable.shape_layer_button)
                     requireActivity().hideKeyboard()
 //                    enableSubmitButton()
                 }
@@ -91,8 +100,16 @@ class VerifyOTPFragment : Fragment() {
                 editor.putBoolean(BundleConstants.IS_LOGIN_COMPLETED,true)
                 editor.apply()
 
-                start<OnboardingActivity>()
+                lifecycleScope.launch {
+                    binding.progressBarContainer.isVisible = true
+                    binding.mainContainer.isVisible = false
+                    delay(3000)
+                    start<OnboardingActivity>()
+                }
             } else {
+                binding.progressBarContainer.isVisible = false
+                binding.mainContainer.isVisible = true
+                Toast.makeText(requireContext(), task.exception?.message.toString(), Toast.LENGTH_SHORT).show()
 //                errorToast(task.exception?.message.toString())
             }
         }

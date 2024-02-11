@@ -1,5 +1,6 @@
 package com.cradlecare.auth_module.presentation.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -52,13 +53,15 @@ class SignInSignUpFragment : Fragment() {
         setUpUI()
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private fun setUpUI() {
         auth = FirebaseAuth.getInstance()
         binding.userMobileNumberEditText.doOnTextChanged { text, _, _, _ ->
             text?.let {
                 if (it.length < 10) {
-
+                    binding.btnGetOtp.background = resources.getDrawable(R.drawable.shape_layer_button_disabled)
                 } else if (it.length == 10) {
+                    binding.btnGetOtp.background = resources.getDrawable(R.drawable.shape_layer_button)
                     requireActivity().hideKeyboard()
                 }
             }
