@@ -1,0 +1,12 @@
+Onboarding Flow
+1. Prgnancy Details (Take Expected Pregancy Date) instead of (Pregnancy Month Going)
+
+Cradle Care Home Screen
+
+1. Card View (estimated pregnancy Date) -- Free
+
+2. Tips -- Free
+
+3. Daily Growth Tracker - 
+
+3. Nurse Visit (next visit and upcomming visit) == In type of calander ( above date and below the icon/any thing denoting)
