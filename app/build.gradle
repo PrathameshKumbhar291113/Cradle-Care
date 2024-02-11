@@ -28,8 +28,15 @@ android {
     }
 
     buildTypes {
-        release {
+        debug{
             minifyEnabled false
+            buildConfigField "String", "CHAT_BOT_API_KEY", "\"${chat_bot_api_key}\""
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled true
+            buildConfigField "String", "CHAT_BOT_API_KEY", "\"${chat_bot_api_key}\""
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
