@@ -13,7 +13,7 @@
         android:title="Mums Mate"
         tools:ignore="HardcodedText" />
     <item
-        android:icon="@drawable/iv_sos"
+        android:icon="@drawable/iv_alarm"
         android:id="@+id/sosFragment"
         android:title="SOS"
         tools:ignore="HardcodedText" />

@@ -46,5 +46,184 @@
             app:srcCompat="@drawable/iv_cradle_care_logo" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sosInactiveState"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolBar">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineUp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineDown"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+         <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineRight"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+         <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineLeft"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <View
+            android:id="@+id/outerCircle"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:alpha="0.5"
+            android:background="@drawable/shape_sos_outer_circle"
+            app:layout_constraintBottom_toTopOf="@id/guideLineDown"
+            app:layout_constraintEnd_toStartOf="@id/guideLineRight"
+            app:layout_constraintStart_toStartOf="@id/guideLineLeft"
+            app:layout_constraintTop_toTopOf="@id/guideLineUp" />
+
+        <View
+            android:id="@+id/middleCircle"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:alpha="0.8"
+            android:background="@drawable/shape_sos_middle_circle"
+            app:layout_constraintBottom_toTopOf="@id/guideLineDown"
+            app:layout_constraintEnd_toStartOf="@id/guideLineRight"
+            app:layout_constraintStart_toEndOf="@id/guideLineLeft"
+            app:layout_constraintTop_toTopOf="@id/guideLineUp" />
+
+        <View
+            android:id="@+id/innerCircle"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:alpha="0.8"
+            android:background="@drawable/shape_sos_inner_circle"
+            app:layout_constraintBottom_toTopOf="@id/guideLineDown"
+            app:layout_constraintEnd_toStartOf="@id/guideLineRight"
+            app:layout_constraintStart_toEndOf="@id/guideLineLeft"
+            app:layout_constraintTop_toTopOf="@id/guideLineUp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/sosText"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="SOS"
+            android:textColor="@color/white"
+            android:textSize="50dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:fontFamily="@font/aref_ruqaa_bold"
+            app:layout_constraintBottom_toBottomOf="@id/innerCircle"
+            app:layout_constraintEnd_toEndOf="@id/innerCircle"
+            app:layout_constraintStart_toStartOf="@id/innerCircle"
+            app:layout_constraintTop_toTopOf="@+id/innerCircle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sosActiveState"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/shape_sos_active_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolBar">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineUpActive"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineDownActive"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineRightActive"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLineLeftActive"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <View
+            android:id="@+id/outerCircleActive"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:alpha="0.3"
+            android:background="@drawable/shape_sos_active_circle"
+            app:layout_constraintBottom_toTopOf="@id/guideLineDownActive"
+            app:layout_constraintEnd_toStartOf="@id/guideLineRightActive"
+            app:layout_constraintStart_toStartOf="@id/guideLineLeftActive"
+            app:layout_constraintTop_toTopOf="@id/guideLineUpActive" />
+
+        <View
+            android:id="@+id/middleCircleActive"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:alpha="0.6"
+            android:background="@drawable/shape_sos_active_circle"
+            app:layout_constraintBottom_toTopOf="@id/guideLineDownActive"
+            app:layout_constraintEnd_toStartOf="@id/guideLineRightActive"
+            app:layout_constraintStart_toEndOf="@id/guideLineLeftActive"
+            app:layout_constraintTop_toTopOf="@id/guideLineUpActive" />
+
+        <View
+            android:id="@+id/innerCircleActive"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/shape_sos_active_circle"
+            app:layout_constraintBottom_toTopOf="@id/guideLineDownActive"
+            app:layout_constraintEnd_toStartOf="@id/guideLineRightActive"
+            app:layout_constraintStart_toEndOf="@id/guideLineLeftActive"
+            app:layout_constraintTop_toTopOf="@id/guideLineUpActive" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/sosTextActive"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="SOS"
+            android:textColor="@color/red_400"
+            android:textSize="50dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:fontFamily="@font/aref_ruqaa_bold"
+            app:layout_constraintBottom_toBottomOf="@id/innerCircleActive"
+            app:layout_constraintEnd_toEndOf="@id/innerCircleActive"
+            app:layout_constraintStart_toStartOf="@id/innerCircleActive"
+            app:layout_constraintTop_toTopOf="@+id/innerCircleActive" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
