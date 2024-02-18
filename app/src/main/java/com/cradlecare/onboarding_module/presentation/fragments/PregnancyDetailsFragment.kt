@@ -7,11 +7,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.cradlecare.R
 import com.cradlecare.databinding.FragmentPregnancyDetailsBinding
 import com.cradlecare.home_module.presentation.HomeActivity
+import com.google.android.material.datepicker.MaterialDatePicker
 import com.resq360.utils.BundleConstants
 import dagger.hilt.android.AndroidEntryPoint
 import splitties.fragments.start
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 @AndroidEntryPoint
 class PregnancyDetailsFragment : Fragment() {
@@ -37,6 +42,11 @@ class PregnancyDetailsFragment : Fragment() {
     }
 
     private fun setupUi() {
+
+        binding.userPregnancyMonthValue.setOnClickListener {
+            showDatePicker()
+        }
+
         binding.btnSubmit.setOnClickListener {
             val sharePrefPregnancyMonth : SharedPreferences = requireContext().getSharedPreferences(
                 BundleConstants.PREGNANCY_MONTH, Context.MODE_PRIVATE)
@@ -63,6 +73,31 @@ class PregnancyDetailsFragment : Fragment() {
             editorOnboarding.apply()
 
             start<HomeActivity>()
+        }
+    }
+
+    private fun showDatePicker() {
+        val datePicker = MaterialDatePicker.Builder.datePicker()
+            .setTitleText("Select Date of Birth")
+            .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
+            .setTheme(R.style.ThemeMaterialCalendar)
+            .build()
+
+
+        datePicker.show(childFragmentManager, "DATE_PICKER")
+        datePicker.isCancelable = false
+
+        datePicker.addOnPositiveButtonClickListener { selectedDate ->
+            // Convert the selected date to a formatted string
+            val dateFormat = SimpleDateFormat("MM/dd/yyyy", Locale.getDefault())
+            val formattedDate = dateFormat.format(Date(selectedDate))
+
+            // Set the formatted date to the TextView
+            binding.userPregnancyMonthValue.setText(formattedDate.toString())
+        }
+
+        datePicker.addOnNegativeButtonClickListener {
+            datePicker.dismiss()
         }
     }
 }
