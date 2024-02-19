@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".home_module.presentation.fragments.SosFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,14 +19,14 @@
             android:id="@+id/appNameText"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
             android:fontFamily="@font/aref_ruqaa_bold"
             android:paddingStart="15dp"
             android:text="Emergency SOS"
+            android:textAlignment="textStart"
             android:textColor="@color/white"
             android:textSize="30dp"
             android:textStyle="bold"
-            android:textAlignment="textStart"
-            android:layout_marginEnd="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/ivLogo"
             app:layout_constraintHorizontal_bias="0.0"
@@ -46,6 +46,7 @@
             app:srcCompat="@drawable/iv_cradle_care_logo" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!--SOS Inactive state-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/sosInactiveState"
         android:layout_width="match_parent"
@@ -59,32 +60,59 @@
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideLineUp"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideLineDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            app:layout_constraintGuide_percent="0.7" />
 
-         <androidx.constraintlayout.widget.Guideline
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideLineRight"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.9"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
 
-         <androidx.constraintlayout.widget.Guideline
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideLineLeft"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/sosInfoText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aref_ruqaa_bold"
+            android:gravity="center"
+            android:text="After presing the SOS button, we will contact nearest ambulance service to your current location."
+            android:textColor="@color/rose_fam_400"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/guideLineUp"
+            app:layout_constraintEnd_toEndOf="@id/guideLineRight"
+            app:layout_constraintStart_toStartOf="@id/guideLineLeft"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/sosNoteText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aref_ruqaa_bold"
+            android:gravity="center"
+            android:text="NOTE: Only use this sos button in emergency, if miss-used, user will get penaltize."
+            android:textColor="@color/red_400"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideLineRight"
+            app:layout_constraintStart_toStartOf="@id/guideLineLeft"
+            app:layout_constraintTop_toTopOf="@+id/guideLineDown" />
 
         <View
             android:id="@+id/outerCircle"
@@ -123,59 +151,103 @@
             android:id="@+id/sosText"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:fontFamily="@font/aref_ruqaa_bold"
+            android:gravity="center"
             android:text="SOS"
+            android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="50dp"
-            android:textAlignment="center"
-            android:gravity="center"
-            android:fontFamily="@font/aref_ruqaa_bold"
             app:layout_constraintBottom_toBottomOf="@id/innerCircle"
             app:layout_constraintEnd_toEndOf="@id/innerCircle"
             app:layout_constraintStart_toStartOf="@id/innerCircle"
             app:layout_constraintTop_toTopOf="@+id/innerCircle" />
 
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!--SOS Active state-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/sosActiveState"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:visibility="gone"
         android:background="@drawable/shape_sos_active_bg"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolBar">
 
-
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideLineUpActive"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideLineDownActive"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.7"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.7" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideLineRightActive"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.9"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideLineLeftActive"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/sosTimeLeftText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aref_ruqaa_bold"
+            android:gravity="center"
+            tools:text="Time Left"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toTopOf="@id/sosTimeLeftValue"
+            app:layout_constraintEnd_toEndOf="@id/guideLineRightActive"
+            app:layout_constraintStart_toStartOf="@id/guideLineLeftActive"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/sosTimeLeftValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aref_ruqaa_bold"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="35dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideLineUpActive"
+            app:layout_constraintEnd_toEndOf="@id/guideLineRightActive"
+            app:layout_constraintStart_toStartOf="@id/guideLineLeftActive"
+            app:layout_constraintTop_toBottomOf="@+id/sosTimeLeftText"
+            tools:text="19:26 Mins" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/sosEstimatedTimeText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aref_ruqaa_bold"
+            android:gravity="center"
+            tools:text="Estimated Time Of Ambulance To Reach Your Door Step"
+            android:textColor="@color/red_400"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideLineRightActive"
+            app:layout_constraintStart_toStartOf="@id/guideLineLeftActive"
+            app:layout_constraintTop_toTopOf="@+id/guideLineDownActive"
+            app:layout_constraintVertical_bias="0.80" />
 
         <View
             android:id="@+id/outerCircleActive"
@@ -213,12 +285,12 @@
             android:id="@+id/sosTextActive"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:fontFamily="@font/aref_ruqaa_bold"
+            android:gravity="center"
             android:text="SOS"
+            android:textAlignment="center"
             android:textColor="@color/red_400"
             android:textSize="50dp"
-            android:textAlignment="center"
-            android:gravity="center"
-            android:fontFamily="@font/aref_ruqaa_bold"
             app:layout_constraintBottom_toBottomOf="@id/innerCircleActive"
             app:layout_constraintEnd_toEndOf="@id/innerCircleActive"
             app:layout_constraintStart_toStartOf="@id/innerCircleActive"
