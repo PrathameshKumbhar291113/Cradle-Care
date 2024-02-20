@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".home_module.presentation.fragments.ProfileFragment">
 
@@ -19,14 +20,14 @@
             android:id="@+id/appNameText"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
             android:fontFamily="@font/aref_ruqaa_bold"
             android:paddingStart="15dp"
             android:text="Profile"
+            android:textAlignment="textStart"
             android:textColor="@color/white"
             android:textSize="30dp"
             android:textStyle="bold"
-            android:textAlignment="textStart"
-            android:layout_marginEnd="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/ivLogo"
             app:layout_constraintHorizontal_bias="0.0"
@@ -45,5 +46,38 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/iv_cradle_care_logo" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollViewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolBar">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/incUserProfileDetails"
+                layout="@layout/inc_profile_name_display"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                android:id="@+id/incUserSubscriptionAndSettings"
+                layout="@layout/inc_profile_payment_and_settings"
+                android:layout_marginTop="-15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

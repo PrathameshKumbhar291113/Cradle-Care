@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/rose_fam_400">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/nameInitialView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:paddingVertical="20dp"
+        android:scaleType="center"
+        android:src="@drawable/shape_name_initial_display_bg"
+        app:layout_constraintBottom_toTopOf="@id/userFullName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/userNameShort"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="PK"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textColor="@color/red_400"
+        android:fontFamily="@font/inter_bold"
+        app:layout_constraintBottom_toBottomOf="@+id/nameInitialView"
+        app:layout_constraintEnd_toEndOf="@+id/nameInitialView"
+        app:layout_constraintStart_toStartOf="@+id/nameInitialView"
+        app:layout_constraintTop_toTopOf="@+id/nameInitialView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/updateName"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/shape_sos_active_circle"
+        android:padding="5dp"
+        android:src="@drawable/iv_update_username"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintBottom_toBottomOf="@id/nameInitialView"
+        app:layout_constraintEnd_toEndOf="@id/nameInitialView"
+        app:layout_constraintStart_toStartOf="@id/nameInitialView"
+        app:layout_constraintTop_toTopOf="@id/nameInitialView"
+        app:layout_constraintVertical_bias="0.3" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/userFullName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/archivo_semibold"
+        android:text="Prathamesh M. K."
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@id/userMobileNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameInitialView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/userMobileNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/archivo_medium"
+        android:text="+91 9082379158"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@id/userAge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userFullName" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/userAge"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/archivo_medium"
+        android:text="Age: 20 Yrs"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userMobileNumber" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

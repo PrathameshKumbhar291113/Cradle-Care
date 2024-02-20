@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/archivo_bold</item>
+        <item>@font/archivo_medium</item>
+        <item>@font/archivo_regular</item>
+        <item>@font/archivo_semibold</item>
         <item>@font/aref_ruqaa</item>
         <item>@font/aref_ruqaa_bold</item>
+        <item>@font/inter_bold</item>
+        <item>@font/inter_regular</item>
+        <item>@font/inter_medium</item>
+        <item>@font/inter_semibold</item>
     </array>
 </resources>
