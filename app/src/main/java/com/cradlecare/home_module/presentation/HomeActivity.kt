@@ -130,6 +130,29 @@ class HomeActivity : AppCompatActivity() {
             }
         }
 
+        navController.addOnDestinationChangedListener{ _, destination, _ ->
+            when(destination.id){
+                R.id.homeFragment -> {
+
+                }
+
+                R.id.mumsMateFragment -> {
+
+                }
+
+                R.id.sosFragment -> {
+
+                }
+
+                R.id.profileFragment -> {
+
+                }
+
+                else -> {
+                }
+            }
+        }
+
     }
     private fun setupUi() {
         window.statusBarColor = getColor(R.color.rose_fam_400)

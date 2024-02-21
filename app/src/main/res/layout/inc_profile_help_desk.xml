@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/shape_top_round_corner_card">
+    android:background="@color/white">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineStart"
@@ -23,134 +23,99 @@
         android:id="@+id/ivSettings"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:src="@drawable/iv_settings"
-        app:layout_constraintBottom_toBottomOf="@id/settingTitle"
+        android:src="@drawable/iv_customer_support"
+        app:layout_constraintBottom_toBottomOf="@id/helpdeskTitle"
         app:layout_constraintEnd_toStartOf="@+id/guidelineStart"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/settingTitle" />
+        app:layout_constraintTop_toTopOf="@id/helpdeskTitle" />
 
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/settingTitle"
+        android:id="@+id/helpdeskTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/archivo_semibold"
-        android:text="Subscription &amp; Settings"
+        android:text="Customer Support"
         android:textColor="@color/grey_dark"
         android:textSize="18dp"
-        app:layout_constraintBottom_toTopOf="@id/settingSubscriptionDetails"
+        app:layout_constraintBottom_toTopOf="@id/settingFaqDetails"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guidelineStart"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivSubscriptionDetails"
+        android:id="@+id/ivFAQ"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:scaleType="centerInside"
-        android:src="@drawable/iv_subscription_details"
-        app:layout_constraintBottom_toBottomOf="@id/settingSubscriptionDetails"
+        android:src="@drawable/iv_faq"
+        app:layout_constraintBottom_toBottomOf="@id/settingFaqDetails"
         app:layout_constraintEnd_toStartOf="@+id/guidelineStart"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/settingSubscriptionDetails" />
+        app:layout_constraintTop_toTopOf="@id/settingFaqDetails" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/settingSubscriptionDetails"
+        android:id="@+id/settingFaqDetails"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:fontFamily="@font/archivo_medium"
-        android:text="Subscription Details"
+        android:text="FAQ's"
         android:textColor="@color/grey_dark"
         android:textSize="16dp"
-        app:layout_constraintBottom_toTopOf="@id/settingTransactionDetails"
+        app:layout_constraintBottom_toTopOf="@id/settingReachOutToUs"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
         app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-        app:layout_constraintTop_toBottomOf="@id/settingTitle" />
+        app:layout_constraintTop_toBottomOf="@id/helpdeskTitle" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivSubscriptionDetailsNext"
+        android:id="@+id/ivFaqDetailsNext"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="center"
         android:src="@drawable/iv_next_img_btn"
-        app:layout_constraintBottom_toBottomOf="@id/settingSubscriptionDetails"
+        app:layout_constraintBottom_toBottomOf="@id/settingFaqDetails"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintTop_toTopOf="@id/settingSubscriptionDetails" />
+        app:layout_constraintTop_toTopOf="@id/settingFaqDetails" />
 
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivTransactionDetails"
+        android:id="@+id/ivReachOutToUs"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:scaleType="center"
-        android:src="@drawable/iv_transaction_details"
-        app:layout_constraintBottom_toBottomOf="@id/settingTransactionDetails"
+        android:src="@drawable/iv_reach_out_to_us"
+        app:layout_constraintBottom_toBottomOf="@id/settingReachOutToUs"
         app:layout_constraintEnd_toStartOf="@+id/guidelineStart"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/settingTransactionDetails" />
+        app:layout_constraintTop_toTopOf="@id/settingReachOutToUs" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/settingTransactionDetails"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:fontFamily="@font/archivo_medium"
-        android:text="Transaction Details"
-        android:textColor="@color/grey_dark"
-        android:textSize="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-        app:layout_constraintTop_toBottomOf="@id/settingSubscriptionDetails" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivTransactionDetailsNext"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:scaleType="center"
-        android:src="@drawable/iv_next_img_btn"
-        app:layout_constraintBottom_toBottomOf="@id/settingTransactionDetails"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintTop_toTopOf="@id/settingTransactionDetails" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivKycDetails"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:scaleType="center"
-        android:src="@drawable/iv_kyc"
-        app:layout_constraintBottom_toBottomOf="@id/settingKycDetails"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineStart"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/settingKycDetails" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/settingKycDetails"
+        android:id="@+id/settingReachOutToUs"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="10dp"
         android:fontFamily="@font/archivo_medium"
-        android:text="Kyc Verification"
+        android:text="Reach Out To Us"
         android:textColor="@color/grey_dark"
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
         app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-        app:layout_constraintTop_toBottomOf="@id/settingTransactionDetails" />
+        app:layout_constraintTop_toBottomOf="@id/settingFaqDetails" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivKycDetailsNext"
+        android:id="@+id/ivReachOutToUsNext"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="center"
         android:src="@drawable/iv_next_img_btn"
-        app:layout_constraintBottom_toBottomOf="@id/settingKycDetails"
+        app:layout_constraintBottom_toBottomOf="@id/settingReachOutToUs"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintTop_toTopOf="@id/settingKycDetails" />
+        app:layout_constraintTop_toTopOf="@id/settingReachOutToUs" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

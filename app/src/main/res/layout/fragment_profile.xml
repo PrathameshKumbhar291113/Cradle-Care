@@ -76,6 +76,84 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
+            <View
+                android:id="@+id/divider1"
+                android:background="@color/rose_fam_400"
+                android:alpha="0.3"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+
+            <include
+                android:id="@+id/incHelpDesk"
+                layout="@layout/inc_profile_help_desk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:id="@+id/divider2"
+                android:background="@color/rose_fam_400"
+                android:alpha="0.3"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+
+            <include
+                android:id="@+id/incPrivacySecurity"
+                layout="@layout/inc_profile_privacy_security"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/logoutContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/userLogoutIcon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginHorizontal="2dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/userLogoutText"
+                    app:layout_constraintEnd_toStartOf="@id/userLogoutText"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/userLogoutText"
+                    app:srcCompat="@drawable/iv_logout" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/userLogoutText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="20dp"
+                    android:fontFamily="@font/aref_ruqaa_bold"
+                    android:text="Logout"
+                    android:textColor="@color/rose_fam_400"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/userLogoutIcon"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/versionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginVertical="20dp"
+                android:fontFamily="@font/archivo_semibold"
+                android:text="Version: 1.0.2"
+                android:textColor="@color/grey_dark"
+                android:textSize="14dp" />
+
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.core.widget.NestedScrollView>
