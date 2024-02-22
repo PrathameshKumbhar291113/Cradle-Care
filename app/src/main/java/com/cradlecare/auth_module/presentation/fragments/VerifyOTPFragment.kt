@@ -104,6 +104,7 @@ class VerifyOTPFragment : Fragment() {
                     binding.progressBarContainer.isVisible = true
                     binding.mainContainer.isVisible = false
                     delay(3000)
+                    requireActivity().finish()
                     start<OnboardingActivity>()
                 }
             } else {

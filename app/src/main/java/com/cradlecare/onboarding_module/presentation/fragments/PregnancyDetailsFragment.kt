@@ -7,16 +7,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.cradlecare.R
 import com.cradlecare.databinding.FragmentPregnancyDetailsBinding
 import com.cradlecare.home_module.presentation.HomeActivity
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.resq360.utils.BundleConstants
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import splitties.fragments.start
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+
 
 @AndroidEntryPoint
 class PregnancyDetailsFragment : Fragment() {
@@ -48,31 +52,40 @@ class PregnancyDetailsFragment : Fragment() {
         }
 
         binding.btnSubmit.setOnClickListener {
-            val sharePrefPregnancyMonth : SharedPreferences = requireContext().getSharedPreferences(
-                BundleConstants.PREGNANCY_MONTH, Context.MODE_PRIVATE)
-            var editorPregnancyMonth : SharedPreferences.Editor = sharePrefPregnancyMonth.edit()
+            val sharePrefPregnancyMonth: SharedPreferences = requireContext().getSharedPreferences(
+                BundleConstants.PREGNANCY_MONTH, Context.MODE_PRIVATE
+            )
+            var editorPregnancyMonth: SharedPreferences.Editor = sharePrefPregnancyMonth.edit()
             editorPregnancyMonth.putString(
                 BundleConstants.USER_PREGNANCY_MONTH,
-                binding.userPregnancyMonthValue.text?.trim().toString())
+                binding.userPregnancyMonthValue.text?.trim().toString()
+            )
             editorPregnancyMonth.apply()
 
-            val sharePrefBloodGroup : SharedPreferences = requireContext().getSharedPreferences(
-                BundleConstants.BLOOD_GROUP, Context.MODE_PRIVATE)
-            var editorBloodGroup : SharedPreferences.Editor = sharePrefBloodGroup.edit()
+            val sharePrefBloodGroup: SharedPreferences = requireContext().getSharedPreferences(
+                BundleConstants.BLOOD_GROUP, Context.MODE_PRIVATE
+            )
+            var editorBloodGroup: SharedPreferences.Editor = sharePrefBloodGroup.edit()
             editorBloodGroup.putString(
                 BundleConstants.USER_BLOOD_GROUP,
-                binding.userBloodGroupValue.text?.trim().toString())
+                binding.userBloodGroupValue.text?.trim().toString()
+            )
             editorBloodGroup.apply()
 
-            val sharePrefOnboarding : SharedPreferences = requireContext().getSharedPreferences(
-                BundleConstants.ONBOARDING, Context.MODE_PRIVATE)
-            var editorOnboarding : SharedPreferences.Editor = sharePrefOnboarding.edit()
+            val sharePrefOnboarding: SharedPreferences = requireContext().getSharedPreferences(
+                BundleConstants.ONBOARDING, Context.MODE_PRIVATE
+            )
+            var editorOnboarding: SharedPreferences.Editor = sharePrefOnboarding.edit()
             editorOnboarding.putBoolean(
                 BundleConstants.IS_ONBOARDING_COMPLETED, true
             )
             editorOnboarding.apply()
 
-            start<HomeActivity>()
+            lifecycleScope.launch {
+                delay(500)
+                requireActivity().finish()
+                start<HomeActivity>()
+            }
         }
     }
 

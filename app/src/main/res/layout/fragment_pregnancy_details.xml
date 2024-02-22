@@ -111,7 +111,7 @@
             android:layout_marginHorizontal="18dp"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/aref_ruqaa"
-            android:text="Blood Group (Eg. A+)"
+            android:text="Blood Group (A +ve)"
             android:textColor="@color/black"
             android:textSize="20dp"
             app:layout_constraintBottom_toTopOf="@id/userBloodGroupValue"

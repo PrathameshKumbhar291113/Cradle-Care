@@ -2,4 +2,15 @@
     <string name="app_name">Cradle Care</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="blood_group_list">
+        <item>A +ve</item>
+        <item>A -ve</item>
+        <item>B +ve</item>
+        <item>B -ve</item>
+        <item>O +ve</item>
+        <item>O -ve</item>
+        <item>AB +ve</item>
+        <item>AB -ve</item>
+    </string-array>
 </resources>
