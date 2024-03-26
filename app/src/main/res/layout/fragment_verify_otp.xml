@@ -90,27 +90,23 @@
             app:layout_constraintTop_toBottomOf="@id/tvLoginTitle"
             app:layout_constraintVertical_chainStyle="packed" />
 
-        <com.google.android.material.textfield.TextInputEditText
+        <com.noobcode.otpview.OTPView
             android:id="@+id/userOtpEditText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
+            android:layout_centerInParent="true"
             android:layout_marginTop="8dp"
-            android:background="@drawable/shape_white_corner_5dp"
-            android:elevation="10dp"
-            android:hint="Enter Otp Here"
-            android:inputType="phone"
-            android:maxLength="6"
-            android:paddingHorizontal="8dp"
-            android:paddingVertical="15dp"
-            android:stateListAnimator="@null"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
+            android:layout_marginHorizontal="15dp"
+            android:fontFamily="@font/archivo_semibold"
+            android:textColor="@color/rose_fam_400"
+            android:textSize="25dp"
+            app:borderThickness="4"
             app:layout_constraintBottom_toTopOf="@+id/guideLine"
-            app:layout_constraintEnd_toEndOf="@+id/userOtpTitle"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userOtpTitle" />
-
+            app:layout_constraintTop_toBottomOf="@+id/userOtpTitle"
+            app:otpLength="6"
+            app:spaceBetween="15" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideLine"

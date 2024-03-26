@@ -18,6 +18,7 @@ import com.cradlecare.onboarding_module.presentation.OnboardingActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
+import com.noobcode.otpview.OTPView
 import com.resq360.utils.BundleConstants
 import com.resq360.utils.hideKeyboard
 import dagger.hilt.android.AndroidEntryPoint
@@ -60,7 +61,7 @@ class VerifyOTPFragment : Fragment() {
     @SuppressLint("UseCompatLoadingForDrawables")
     private fun setupUI() {
         auth = FirebaseAuth.getInstance()
-        binding.userOtpEditText.doOnTextChanged { text, start, before, count ->
+        /*binding.userOtpEditText.doOnTextChanged { text, start, before, count ->
             text?.let {
                 if (it.length < 6) {
 //                    disableSubmitButton()
@@ -71,7 +72,27 @@ class VerifyOTPFragment : Fragment() {
 //                    enableSubmitButton()
                 }
             }
+        }*/
+
+        binding.userOtpEditText.doOnTextChanged { text, start, before, count ->
+            text?.let {
+                if (it.length<6){
+                    binding.btnVerify.background = requireContext().resources.getDrawable(R.drawable.shape_layer_button_disabled)
+                }else{
+                    binding.btnVerify.background = requireContext().resources.getDrawable(R.drawable.shape_layer_button)
+                }
+            }
         }
+
+        binding.userOtpEditText.setOTPListener(
+            object : OTPView.OTPListener {
+                override fun onOTPCompleted(otp: String) {
+                    requireActivity().hideKeyboard()
+                    binding.btnVerify.background = requireContext().resources.getDrawable(R.drawable.shape_layer_button)
+                }
+            }
+        )
+
         binding.btnVerify.setOnClickListener {
             requireActivity().hideKeyboard()
             binding.userOtpEditText.text?.let {

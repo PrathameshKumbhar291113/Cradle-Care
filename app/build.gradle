@@ -137,4 +137,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
     //firebase auth
     implementation("com.google.firebase:firebase-auth-ktx")
+
+    //otp view
+    implementation 'com.github.criminact:OTPView:1.0.2'
 }
