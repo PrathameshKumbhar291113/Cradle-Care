@@ -90,7 +90,7 @@
             app:layout_constraintTop_toBottomOf="@id/tvLoginTitle"
             app:layout_constraintVertical_chainStyle="packed" />
 
-        <com.noobcode.otpview.OTPView
+        <com.cradlecare.utils.OTPView
             android:id="@+id/userOtpEditText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

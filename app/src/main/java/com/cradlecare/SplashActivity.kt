@@ -27,7 +27,7 @@ class SplashActivity : AppCompatActivity() {
         setupUi()
     }
 
-    fun setupUi() {
+    private fun setupUi() {
 
         window.statusBarColor = getColor(R.color.rose_fam_400)
 

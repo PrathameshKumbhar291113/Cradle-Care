@@ -15,10 +15,10 @@ import androidx.lifecycle.lifecycleScope
 import com.cradlecare.R
 import com.cradlecare.databinding.FragmentVerifyOtpBinding
 import com.cradlecare.onboarding_module.presentation.OnboardingActivity
+import com.cradlecare.utils.OTPView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
-import com.noobcode.otpview.OTPView
 import com.resq360.utils.BundleConstants
 import com.resq360.utils.hideKeyboard
 import dagger.hilt.android.AndroidEntryPoint

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/preDeliveryCard"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/rose_fam_400">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/preDeliveryHomeCardIcon"
+                android:layout_width="70dp"
+                android:layout_height="0dp"
+                android:rotationY="180"
+                android:scaleType="centerCrop"
+                android:padding="45dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/preDeliveryHomeCardTitle"
+                app:layout_constraintHorizontal_bias="0.05"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/iv_pre_delivery_icon" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/preDeliveryHomeCardTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/aref_ruqaa"
+                android:gravity="center"
+                android:text="Prime for Motherhood"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/preDeliveryHomeCardSubTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/preDeliveryHomeCardIcon"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/preDeliveryHomeCardSubTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:fontFamily="@font/aref_ruqaa"
+                android:gravity="center"
+                android:paddingHorizontal="10dp"
+                android:text="Elevate Your Pregnancy Experience to New Heights with Ease"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toTopOf="@id/btnStartNow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/preDeliveryHomeCardIcon"
+                app:layout_constraintTop_toBottomOf="@id/preDeliveryHomeCardTitle" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnStartNow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/shape_round_corner_primary_button"
+                android:fontFamily="@font/aref_ruqaa"
+                android:text="Start Now"
+                android:textAllCaps="false"
+                android:textColor="@color/rose_fam_500"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/preDeliveryHomeCardIcon"
+                app:layout_constraintTop_toBottomOf="@+id/preDeliveryHomeCardSubTitle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

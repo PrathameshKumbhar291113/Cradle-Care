@@ -14,8 +14,15 @@
         android:theme="@style/Theme.CradleCare"
         tools:targetApi="31">
         <activity
-            android:name=".home_module.presentation.fragments.MumsMateActivity"
-            android:exported="false" />
+            android:name=".kyc_module.KycActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity
+            android:name=".home_module.presentation.fragments.MumsMateFragment"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".home_module.presentation.HomeActivity"
             android:exported="false"

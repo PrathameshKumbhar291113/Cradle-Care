@@ -20,14 +20,14 @@
             android:id="@+id/appNameText"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
             android:fontFamily="@font/aref_ruqaa_bold"
             android:paddingStart="15dp"
             android:text="@string/app_name"
+            android:textAlignment="textStart"
             android:textColor="@color/white"
             android:textSize="30dp"
             android:textStyle="bold"
-            android:textAlignment="textStart"
-            android:layout_marginEnd="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/ivLogo"
             app:layout_constraintHorizontal_bias="0.0"
@@ -65,9 +65,58 @@
 
             <include
                 android:id="@+id/deliveryDaysLeftCard"
-                layout="@layout/inc_home_card_for_estimated_pregnancy_date"
+                layout="@layout/inc_estimated_pregnancy_date_card_home_screen"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/kycStatusTitle"
+                android:text="Kyc Status"
+                android:textSize="20dp"
+                android:textColor="@color/grey_dark"
+                android:fontFamily="@font/archivo_semibold"
+                android:paddingStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                android:id="@+id/kycHomeCard"
+                layout="@layout/inc_kyc_card_home_screen"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/preDeliveryTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/archivo_semibold"
+                android:paddingStart="8dp"
+                android:text="Pre-Delivery Care"
+                android:textColor="@color/grey_dark"
+                android:textSize="20dp" />
+
+            <include
+                android:id="@+id/preDeliveryDetailsCard"
+                layout="@layout/inc_pre_delivery_service_home_card"
+                android:layout_marginVertical="10dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tipsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/archivo_semibold"
+                android:paddingStart="8dp"
+                android:text="Baby Bump Insights: Expert Tips"
+                android:textColor="@color/grey_dark"
+                android:textSize="20dp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
