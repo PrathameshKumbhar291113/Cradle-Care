@@ -43,9 +43,7 @@ object StripeConstants{
 
 object RazorPayConstants{
     const val TEST_KEY_ID = "rzp_test_DziyEguOdZPEa5"
-    const val TEST_KEY_SECRET = "TVjjceNAmGKdfl4XEtm4Jlw7"
     const val LIVE_KEY_ID = "rzp_live_r5d0zbx80yn3vR"
-    const val LIVE_KEY_SECRET = "w8U1oUxzgHZ6kEaWFyJKEhqz"
 }
 
 object NavigationConstants{
