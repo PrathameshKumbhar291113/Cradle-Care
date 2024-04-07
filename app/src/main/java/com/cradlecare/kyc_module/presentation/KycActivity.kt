@@ -1,4 +1,4 @@
-package com.cradlecare.kyc_module
+package com.cradlecare.kyc_module.presentation
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

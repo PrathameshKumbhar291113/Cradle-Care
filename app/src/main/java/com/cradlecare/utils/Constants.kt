@@ -35,3 +35,20 @@ object BundleConstants{
     const val BLOOD_GROUP = "bloodGroup"
     const val USER_BLOOD_GROUP = "userBloodGroup"
 }
+
+object StripeConstants{
+    const val PUBLISHABLE_KEY = "pk_test_51Oz0DuSBxMXTEBzYrl9laZBHkRpzjGBpwjfssKnmX5Loj1UBgfE1AHvdsTkdaY5XVKWPYBEwKG2LekSKdegPDipj00RAmTbDvy"
+    const val CLIENT_SECRET_KEY = "sk_test_51Oz0DuSBxMXTEBzYozvMV6QyfabkAEcwOJWc5x9xPJXMbjdxN4SjfOSfZUaBhcAJiCTEcl3ZinccK8FcUuAdvpSv00XRUIwQt0"
+}
+
+object RazorPayConstants{
+    const val TEST_KEY_ID = "rzp_test_DziyEguOdZPEa5"
+    const val TEST_KEY_SECRET = "TVjjceNAmGKdfl4XEtm4Jlw7"
+    const val LIVE_KEY_ID = "rzp_live_r5d0zbx80yn3vR"
+    const val LIVE_KEY_SECRET = "w8U1oUxzgHZ6kEaWFyJKEhqz"
+}
+
+object NavigationConstants{
+    val IS_PAYMENT_SUCCESSFUL = "isPaymentSuccessFul"
+    val PAYMENT_TRANSACTION_ID = "paymentTransactionId"
+}

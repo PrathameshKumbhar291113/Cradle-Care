@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pre_delivery_flow_nav_graph"
+    app:startDestination="@id/preDeliveryDetailsFragment">
+
+    <fragment
+        android:id="@+id/preDeliveryDetailsFragment"
+        android:name="com.cradlecare.pre_delivery_module.presentation.fragments.PreDeliveryDetailsFragment"
+        android:label="fragment_pre_delivery_details"
+        tools:layout="@layout/fragment_pre_delivery_details" />
+
+    <fragment
+        android:id="@+id/subscriptionSuccessFragment"
+        android:name="com.cradlecare.pre_delivery_module.presentation.fragments.SubscriptionSuccessFragment"
+        android:label="fragment_subscription_success"
+        tools:layout="@layout/fragment_subscription_success" />
+
+    <activity
+        android:id="@+id/subscriptionCheckoutActivity"
+        android:name="com.cradlecare.pre_delivery_module.presentation.SubscriptionCheckoutActivity"
+        android:label="activity_subscription_checkout"
+        tools:layout="@layout/activity_subscription_checkout" />
+    <fragment
+        android:id="@+id/subscriptionFailedFragment"
+        android:name="com.cradlecare.pre_delivery_module.presentation.fragments.SubscriptionFailedFragment"
+        android:label="fragment_subscription_failed"
+        tools:layout="@layout/fragment_subscription_failed" />
+</navigation>

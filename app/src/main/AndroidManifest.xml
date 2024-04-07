@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <application
         android:name=".CradleCareApplication"
         android:allowBackup="true"
@@ -13,11 +20,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CradleCare"
         tools:targetApi="31">
+
         <activity
-            android:name=".kyc_module.KycActivity"
+            android:name=".pre_delivery_module.presentation.SubscriptionCheckoutActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="LockedOrientationActivity" />
+
+        <activity
+            android:name=".pre_delivery_module.presentation.PreDeliveryActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".kyc_module.presentation.KycActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".home_module.presentation.fragments.MumsMateFragment"
             android:exported="false"
@@ -53,6 +72,18 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <meta-data
+            android:name="com.google.android.gms.wallet.api.enabled"
+            android:value="true" />
+
+        <!--<meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="w8U1oUxzgHZ6kEaWFyJKEhqz" />-->
+        <!--<meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="TVjjceNAmGKdfl4XEtm4Jlw7" />-->
+
     </application>
 
 </manifest>

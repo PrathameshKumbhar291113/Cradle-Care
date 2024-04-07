@@ -4,6 +4,6 @@
     android:id="@+id/kycContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".kyc_module.KycActivity">
+    tools:context=".kyc_module.presentation.KycActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -51,19 +51,47 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.9.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.10.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'com.google.firebase:firebase-crashlytics:18.5.1'
-    implementation 'androidx.activity:activity:1.8.0'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    def lifecycle_version = '2.5.1'
+    def nav_version = '2.5.3'
+    def androidx_core_version = '1.9.0'
+    def androidx_appcompat_version = '1.6.1'
+    def material_2_design_version = '1.10.0'
+    def androidx_constraint_version = '2.1.4'
+    def firebase_crashlytics_version = '18.5.1'
+    def androidx_activity_version = '1.8.0'
+    def junit_version = '4.13.2'
+    def androidx_junit_version = '1.1.5'
+    def androidx_espresso_version = '3.5.1'
+    def squareup_retrofit_version = '2.9.0'
+    def rx_java_version = '2.2.21'
+    def android_rx_java_version = '2.1.1'
+    def gson_version = '2.9.1'
+    def room_version = '2.4.3'
+    def kotlin_coroutines_version = '1.6.4'
+    def android_paging_3_version = '3.1.1'
+    def dagger_hilt_version = '2.47'
+    def firebase_bom_version = '32.3.1'
+    def coil_version = '2.1.0'
+    def http_logging_version = '5.0.0-alpha.7'
+    def androidx_activity_ktx_version = '1.3.1'
+    def androidx_fragment_ktx_version = '1.1.0'
+    def splitties_version = '3.0.0'
+    def circular_progress_bar_version = '3.1.0'
+    def circular_image_view_version = '3.1.0'
+    def glide_version = '4.13.2'
+    def razor_pay_gateway_version = '1.6.38'
+
+    implementation "androidx.core:core-ktx:$androidx_core_version"
+    implementation "androidx.appcompat:appcompat:$androidx_appcompat_version"
+    implementation "com.google.android.material:material:$material_2_design_version"
+    implementation "androidx.constraintlayout:constraintlayout:$androidx_constraint_version"
+    implementation "com.google.firebase:firebase-crashlytics:$firebase_crashlytics_version"
+    implementation "androidx.activity:activity:$androidx_activity_version"
+    testImplementation "junit:junit:$junit_version"
+    androidTestImplementation "androidx.test.ext:junit:$androidx_junit_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$androidx_espresso_version"
 
     //Our dependencies start here
-
-    def lifecycle_version = '2.5.1'
 
     // ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
@@ -74,68 +102,63 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
 
     //Navigation Component
-    def nav_version = '2.5.3'
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
     //Retrofit for API calling
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation "com.squareup.retrofit2:retrofit:$squareup_retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$squareup_retrofit_version"
 
     //okHttp logging interceptor for retrofit
-    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.7'
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.21'
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation "com.squareup.okhttp3:logging-interceptor:$http_logging_version"
+    implementation "io.reactivex.rxjava2:rxjava:$rx_java_version"
+    implementation "io.reactivex.rxjava2:rxandroid:$android_rx_java_version"
 
     //Gson auto parsing
-    implementation 'com.google.code.gson:gson:2.9.1'
+    implementation "com.google.code.gson:gson:$gson_version"
 
     //Room for local storage
-    def room_version = '2.4.3'
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
 
     // Coroutines
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version"
 
     //Pagination library
-    implementation "androidx.paging:paging-runtime-ktx:3.1.1"
-
+    implementation "androidx.paging:paging-runtime-ktx:$android_paging_3_version"
+    implementation "androidx.paging:paging-common-ktx:$android_paging_3_version"
 
     //dagger-hilt
-    implementation 'com.google.dagger:hilt-android:2.47'
-    kapt 'com.google.dagger:hilt-android-compiler:2.47'
+    implementation "com.google.dagger:hilt-android:$dagger_hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$dagger_hilt_version"
 
-    // Coroutines
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
-
-    //paging
-    implementation 'androidx.paging:paging-common-ktx:3.1.1'
 
     //Kotlin Image Loading Library - coil library
-    implementation "io.coil-kt:coil:2.1.0"
+    implementation "io.coil-kt:coil:$coil_version"
 
     //to get view models in activity as well as fragment
-    implementation 'androidx.activity:activity-ktx:1.3.1'
-    implementation 'androidx.fragment:fragment-ktx:1.1.0'
+    implementation "androidx.activity:activity-ktx:$androidx_activity_ktx_version"
+    implementation "androidx.fragment:fragment-ktx:$androidx_fragment_ktx_version"
 
     //Splitties for Boiler-plate code cleaning
-    implementation "com.louiscad.splitties:splitties-fun-pack-android-material-components:3.0.0"
+    implementation "com.louiscad.splitties:splitties-fun-pack-android-material-components:$splitties_version"
 
     //Implementing a circular progressbar dependency
-    implementation 'com.mikhaellopez:circularprogressbar:3.1.0'
+    implementation "com.mikhaellopez:circularprogressbar:$circular_progress_bar_version"
 
     //Implementing the circular image view library
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation "de.hdodenhof:circleimageview:$circular_image_view_version"
 
     //Implementing glide library to load the gif
-    implementation 'com.github.bumptech.glide:glide:4.13.2'
+    implementation "com.github.bumptech.glide:glide:$glide_version"
 
     //firebase
-    implementation platform('com.google.firebase:firebase-bom:32.3.1')
+    implementation platform("com.google.firebase:firebase-bom:$firebase_bom_version")
     implementation 'com.google.firebase:firebase-analytics-ktx'
     //firebase auth
     implementation("com.google.firebase:firebase-auth-ktx")
+
+    //Razor pay payment gateway integration
+    implementation "com.razorpay:checkout:$razor_pay_gateway_version"
 }

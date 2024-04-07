@@ -13,4 +13,9 @@
         <item>AB +ve</item>
         <item>AB -ve</item>
     </string-array>
+    <!--    gpay 4806-->
+    <!--    phone 4688-->
+
+    <string name="about_motherhood_prime">About <font color="#db2777"><b>Motherhood Prime </b></font> Monthly Plan</string>
+    <string name="total_amount_payable">Total Amount Payable\n(inc.GST):  <font color="#db2777"><b><u>₹2,999/-</u></b></font></string>
 </resources>
