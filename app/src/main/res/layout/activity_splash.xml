@@ -7,27 +7,30 @@
     tools:context=".SplashActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/logo"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="30dp"
+        android:scaleType="centerCrop"
+        android:padding="60dp"
         android:src="@drawable/iv_cradle_care_logo"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/aref_ruqaa"
         android:gravity="center"
         android:text="Cradle Care"
         android:textSize="50dp"
+        android:layout_marginBottom="50dp"
         app:fontFamily="@font/aref_ruqaa_bold"
+        app:layout_constraintTop_toBottomOf="@id/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

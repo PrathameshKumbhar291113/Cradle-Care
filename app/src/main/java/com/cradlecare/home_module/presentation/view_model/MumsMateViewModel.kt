@@ -32,11 +32,14 @@ class MumsMateViewModel @Inject constructor(
                 is NetworkResult.Loading -> {}
                 is NetworkResult.Success -> {
                     _chatBotResponse.postValue(it)
-                    Log.e("response", "postChatBotPrompt: ${chatBotRequestBody.toString()}")
-                    Log.e("response", "postChatBotPrompt: ${_chatBotResponse.value?.data?.body()?.choices?.get(0)?.text.toString()}")
-
+                    Log.e("response", "postChatBotPrompt SUCCESS: ${chatBotRequestBody.toString()}")
+                    Log.e("response", "postChatBotPrompt SUCCESS: ${_chatBotResponse.value?.data?.body()?.choices?.first()?.text.toString()}")
+                    Log.e("response", "postChatBotPrompt SUCCESS:  ${it.data?.body().toString()} ------- ${it.data?.errorBody().toString()}")
                 }
-                is NetworkResult.Error -> {}
+                is NetworkResult.Error -> {
+                    Log.e("response", "postChatBotPrompt ERROR: ${chatBotRequestBody.toString()}")
+                    Log.e("response", "postChatBotPrompt ERROR: ${it.data?.body().toString()} ------- ${it.data?.errorBody().toString()}")
+                }
             }
         }.launchIn(viewModelScope)
     }
