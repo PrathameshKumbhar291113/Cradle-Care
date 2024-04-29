@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/kyc_flow_nav_graph"
+    app:startDestination="@id/kycIntroFragment2">
+
+    <fragment
+        android:id="@+id/kycIntroFragment2"
+        android:name="com.cradlecare.kyc_module.presentation.fragments.KycIntroFragment"
+        android:label="fragment_kyc_intro"
+        tools:layout="@layout/fragment_kyc_intro" />
+</navigation>

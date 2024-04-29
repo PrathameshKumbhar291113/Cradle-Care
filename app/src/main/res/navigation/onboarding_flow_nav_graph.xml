@@ -22,7 +22,7 @@
         tools:layout="@layout/fragment_address" />
     <fragment
         android:id="@+id/kycIntroFragment"
-        android:name="com.cradlecare.onboarding_module.presentation.fragments.KycIntroFragment"
+        android:name="com.cradlecare.kyc_module.presentation.fragments.KycIntroFragment"
         android:label="fragment_kyc_intro"
         tools:layout="@layout/fragment_kyc_intro" />
     <fragment

@@ -6,6 +6,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.cradlecare.R
 import com.cradlecare.databinding.ActivityPreDeliveryBinding
+import com.cradlecare.utils.appStatusBarColor
 import com.resq360.utils.NavigationConstants.IS_PAYMENT_SUCCESSFUL
 import com.resq360.utils.NavigationConstants.PAYMENT_TRANSACTION_ID
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,8 +24,7 @@ class PreDeliveryActivity : AppCompatActivity() {
     }
 
     private fun setupUi() {
-        window.statusBarColor = resources.getColor(R.color.rose_fam_400)
-
+        appStatusBarColor(this, window)
         val intentIsPaymentTransactionSuccessful = intent.getBooleanExtra(IS_PAYMENT_SUCCESSFUL, false)
         val intentPaymentTransactionId = intent.getStringExtra(PAYMENT_TRANSACTION_ID)
 

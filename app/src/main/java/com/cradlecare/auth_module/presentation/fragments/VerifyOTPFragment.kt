@@ -16,11 +16,11 @@ import com.cradlecare.R
 import com.cradlecare.databinding.FragmentVerifyOtpBinding
 import com.cradlecare.onboarding_module.presentation.OnboardingActivity
 import com.cradlecare.utils.OTPView
+import com.cradlecare.utils.hideKeyboard
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
 import com.resq360.utils.BundleConstants
-import com.resq360.utils.hideKeyboard
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -61,18 +61,6 @@ class VerifyOTPFragment : Fragment() {
     @SuppressLint("UseCompatLoadingForDrawables")
     private fun setupUI() {
         auth = FirebaseAuth.getInstance()
-        /*binding.userOtpEditText.doOnTextChanged { text, start, before, count ->
-            text?.let {
-                if (it.length < 6) {
-//                    disableSubmitButton()
-                    binding.btnVerify.background = resources.getDrawable(R.drawable.shape_layer_button_disabled)
-                } else if (it.length == 6) {
-                    binding.btnVerify.background = resources.getDrawable(R.drawable.shape_layer_button)
-                    requireActivity().hideKeyboard()
-//                    enableSubmitButton()
-                }
-            }
-        }*/
 
         binding.userOtpEditText.doOnTextChanged { text, start, before, count ->
             text?.let {
@@ -97,13 +85,9 @@ class VerifyOTPFragment : Fragment() {
             requireActivity().hideKeyboard()
             binding.userOtpEditText.text?.let {
                 if (it.isNullOrBlank() || it.isNullOrEmpty()) {
-//                    errorToast("OTP Cannot Be Empty!!!")
                     Toast.makeText(requireContext(), "OTP Field Cannot Be Empty.", Toast.LENGTH_SHORT).show()
-//                    disableSubmitButton()
                 } else if (it.length < 6) {
-//                    errorToast("OTP entered is less than 6 Digits!!!")
                     Toast.makeText(requireContext(), "OTP provided is less than 6 digits.", Toast.LENGTH_SHORT).show()
-//                    disableSubmitButton()
                 } else {
                     val credential : PhoneAuthCredential = PhoneAuthProvider.getCredential(_verificationId, it.toString().trim())
                     signInWithPhoneAuthCredential(credential)
@@ -132,7 +116,6 @@ class VerifyOTPFragment : Fragment() {
                 binding.progressBarContainer.isVisible = false
                 binding.mainContainer.isVisible = true
                 Toast.makeText(requireContext(), task.exception?.message.toString(), Toast.LENGTH_SHORT).show()
-//                errorToast(task.exception?.message.toString())
             }
         }
     }

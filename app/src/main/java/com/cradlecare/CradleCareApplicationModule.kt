@@ -32,7 +32,7 @@ object CradleCareApplicationModule {
             .addInterceptor { chain ->
                 val original = chain.request()
                 val requestBuilder = original.newBuilder()
-                    .header("Authorization", "Bearer ${ApiConstantsCradleCare.CHAT_BOT_API_KEY}") // Replace YOUR_API_KEY with your actual API key
+                    .header("Authorization", "Bearer ${ApiConstantsCradleCare.CHAT_BOT_API_KEY}")
                 val request = requestBuilder.build()
                 chain.proceed(request)
             }

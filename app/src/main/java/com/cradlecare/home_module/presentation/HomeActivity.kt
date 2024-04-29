@@ -11,6 +11,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.cradlecare.R
 import com.cradlecare.databinding.ActivityHomeBinding
+import com.cradlecare.utils.appStatusBarColor
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -155,7 +156,7 @@ class HomeActivity : AppCompatActivity() {
 
     }
     private fun setupUi() {
-        window.statusBarColor = getColor(R.color.rose_fam_400)
+        appStatusBarColor(this, window)
     }
 
 }

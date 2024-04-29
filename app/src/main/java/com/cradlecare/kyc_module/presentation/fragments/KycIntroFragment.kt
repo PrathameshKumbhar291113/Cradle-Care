@@ -1,23 +1,12 @@
-package com.cradlecare.onboarding_module.presentation.fragments
+package com.cradlecare.kyc_module.presentation.fragments
 
-import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
-import com.cradlecare.R
 import com.cradlecare.databinding.FragmentKycIntroBinding
-import com.cradlecare.utils.LoaderOverlay
-import com.resq360.utils.BundleConstants
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class KycIntroFragment : Fragment() {
@@ -43,7 +32,7 @@ class KycIntroFragment : Fragment() {
     }
 
     private fun setupUi() {
-        binding.btnVerify.setOnClickListener {
+        /*binding.btnNext.setOnClickListener {
             if (!binding.userAadharCardNumberValue.text.isNullOrEmpty() ||
                 !binding.userAadharCardNumberValue.text.isNullOrBlank() &&
                 !binding.userPanCardNumberValue.text.isNullOrEmpty() ||
@@ -79,10 +68,10 @@ class KycIntroFragment : Fragment() {
                     LoaderOverlay.hideLoaderAnimationDialog()
                 }
             }
-        }
+        }*/
 
         binding.btnNext.setOnClickListener {
-            findNavController().navigate(R.id.pregnancyDetailsFragment)
+
         }
     }
 }

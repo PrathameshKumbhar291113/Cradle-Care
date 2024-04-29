@@ -2,8 +2,8 @@ package com.cradlecare.auth_module.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.cradlecare.R
 import com.cradlecare.databinding.ActivityAuthBinding
+import com.cradlecare.utils.appStatusBarColor
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -14,7 +14,7 @@ class AuthActivity : AppCompatActivity() {
         binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        window.statusBarColor = getColor(R.color.rose_fam_400)
+        appStatusBarColor(this, window)
     }
 
     override fun onBackPressed() {

@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
@@ -20,8 +19,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import okhttp3.MediaType
-import okhttp3.MediaType.Companion.toMediaType
 
 
 @AndroidEntryPoint
@@ -31,8 +28,6 @@ class MumsMateFragment : Fragment() {
     private lateinit var messageAdapter: MessageAdapter
 
     private val mumsMateViewModel: MumsMateViewModel by activityViewModels()
-
-    val JSON: MediaType = "application/json; charset=utf-8".toMediaType()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,6 +50,9 @@ class MumsMateFragment : Fragment() {
     }
 
     private fun setUpObservers() {
+
+        addToChat("Hi, Mums Mate Chat Bot Here\nHow Can I Help You?", Message.SENT_BY_BOT)
+
         mumsMateViewModel.chatBotResponse.observe(viewLifecycleOwner) {
             when (it) {
                 is NetworkResult.Loading -> {
@@ -89,10 +87,8 @@ class MumsMateFragment : Fragment() {
         messageAdapter = MessageAdapter(messageList)
         binding.recyclerView.adapter = messageAdapter
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        binding.welcomeText.isVisible = true
-
         binding.sendBtn.setOnClickListener {
-            binding.welcomeText.isVisible = false
+
             runBlocking{
                 var requestBody = ChatBotRequestBody(
                     prompt = binding.messageEditText.text?.trim().toString()

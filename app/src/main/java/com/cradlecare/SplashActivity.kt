@@ -10,6 +10,7 @@ import com.cradlecare.auth_module.presentation.AuthActivity
 import com.cradlecare.databinding.ActivitySplashBinding
 import com.cradlecare.home_module.presentation.HomeActivity
 import com.cradlecare.onboarding_module.presentation.OnboardingActivity
+import com.cradlecare.utils.appStatusBarColor
 import com.resq360.utils.BundleConstants
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
@@ -28,8 +29,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun setupUi() {
-
-        window.statusBarColor = getColor(R.color.rose_fam_400)
+        appStatusBarColor(this, window)
 
         val sharePrefLogin: SharedPreferences =
             getSharedPreferences(BundleConstants.LOGIN, Context.MODE_PRIVATE)

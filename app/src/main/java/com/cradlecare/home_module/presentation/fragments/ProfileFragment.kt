@@ -1,5 +1,7 @@
 package com.cradlecare.home_module.presentation.fragments
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +11,8 @@ import androidx.lifecycle.lifecycleScope
 import com.cradlecare.SplashActivity
 import com.cradlecare.databinding.FragmentProfileBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.resq360.utils.BundleConstants
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -18,16 +22,19 @@ import splitties.fragments.start
 class ProfileFragment : Fragment() {
     private lateinit var binding: FragmentProfileBinding
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var fireBaseCurrentUser: FirebaseUser
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         firebaseAuth = FirebaseAuth.getInstance()
+        firebaseAuth.currentUser?.let {
+            fireBaseCurrentUser = it
+        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View{
-        // Inflate the layout for this fragment
         binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -35,6 +42,15 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         logout()
+        setUpUi()
+    }
+
+    private fun setUpUi() {
+        setupUserDetails()
+    }
+
+    private fun setupUserDetails() {
+        binding.incUserProfileDetails.userMobileNumber.text = fireBaseCurrentUser.phoneNumber.toString()
     }
 
     private fun logout() {
@@ -44,6 +60,21 @@ class ProfileFragment : Fragment() {
             lifecycleScope.launch(){
                 delay(1000)
                 start<SplashActivity>(){
+                    val sharePrefLogin : SharedPreferences = requireContext().getSharedPreferences(
+                        BundleConstants.LOGIN, Context.MODE_PRIVATE)
+                    var editor : SharedPreferences.Editor = sharePrefLogin.edit()
+                    editor.putBoolean(BundleConstants.IS_LOGIN_COMPLETED,false)
+                    editor.apply()
+
+                    val sharePrefOnboarding: SharedPreferences = requireContext().getSharedPreferences(
+                        BundleConstants.ONBOARDING, Context.MODE_PRIVATE
+                    )
+                    var editorOnboarding: SharedPreferences.Editor = sharePrefOnboarding.edit()
+                    editorOnboarding.putBoolean(
+                        BundleConstants.IS_ONBOARDING_COMPLETED, false
+                    )
+                    editorOnboarding.apply()
+
                     activity?.finish()
                 }
             }

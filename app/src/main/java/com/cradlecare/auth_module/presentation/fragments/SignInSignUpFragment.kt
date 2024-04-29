@@ -13,6 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.cradlecare.R
 import com.cradlecare.databinding.FragmentSignInSignUpBinding
+import com.cradlecare.utils.hideKeyboard
 import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.FirebaseAuth
@@ -20,7 +21,6 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
-import com.resq360.utils.hideKeyboard
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -88,12 +88,10 @@ class SignInSignUpFragment : Fragment() {
         callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {
-//                findNavController().navigate(R.id.homeFragment)
             }
 
             override fun onVerificationFailed(e: FirebaseException) {
                 if (e is FirebaseAuthInvalidCredentialsException) {
-//                    errorToast("Invalid phone number.")
                     Toast.makeText(requireContext(),"Invalid phone number.",Toast.LENGTH_SHORT).show()
                 } else if (e is FirebaseTooManyRequestsException) {
 //                    errorToast("Quota exceeded.")

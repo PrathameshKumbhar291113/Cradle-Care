@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.cradlecare.R
 import com.cradlecare.databinding.ActivitySubscriptionCheckoutBinding
+import com.cradlecare.utils.appStatusBarColor
 import com.razorpay.Checkout
 import com.razorpay.PaymentResultListener
 import com.resq360.utils.NavigationConstants.IS_PAYMENT_SUCCESSFUL
@@ -32,7 +32,7 @@ class SubscriptionCheckoutActivity : AppCompatActivity(), /*PaymentResultWithDat
     }
 
     private fun setupRazorPayGateway() {
-        window?.statusBarColor = this.resources.getColor(R.color.rose_fam_400)
+        appStatusBarColor(this, window)
         binding.btnPayout.setOnClickListener {
             startPayment()
         }

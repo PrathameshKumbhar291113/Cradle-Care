@@ -47,21 +47,6 @@
             app:srcCompat="@drawable/iv_cradle_care_logo" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/welcomeText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/aref_ruqaa_bold"
-        android:layout_marginTop="10dp"
-        android:paddingHorizontal="10dp"
-        android:text="Welcome To Mums Mate AI Consultation..."
-        android:textAlignment="center"
-        android:textColor="@color/rose_fam_400"
-        android:textSize="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolBar" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="0dp"

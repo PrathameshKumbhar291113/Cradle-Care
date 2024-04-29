@@ -90,27 +90,27 @@ class PregnancyDetailsFragment : Fragment() {
     }
 
     private fun showDatePicker() {
-        val datePicker = MaterialDatePicker.Builder.datePicker()
-            .setTitleText("Select Date of Birth")
-            .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
-            .setTheme(R.style.ThemeMaterialCalendar)
-            .build()
+        lifecycleScope.launch {
+            val datePicker = MaterialDatePicker.Builder.datePicker()
+                .setTitleText("Select Date of Birth")
+                .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
+                .setTheme(R.style.ThemeMaterialCalendar)
+                .build()
 
 
-        datePicker.show(childFragmentManager, "DATE_PICKER")
-        datePicker.isCancelable = false
+            datePicker.show(childFragmentManager, "DATE_PICKER")
+            datePicker.isCancelable = false
 
-        datePicker.addOnPositiveButtonClickListener { selectedDate ->
-            // Convert the selected date to a formatted string
-            val dateFormat = SimpleDateFormat("MM/dd/yyyy", Locale.getDefault())
-            val formattedDate = dateFormat.format(Date(selectedDate))
+            datePicker.addOnPositiveButtonClickListener { selectedDate ->
+                val dateFormat = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
+                val formattedDate = dateFormat.format(Date(selectedDate))
 
-            // Set the formatted date to the TextView
-            binding.userPregnancyMonthValue.setText(formattedDate.toString())
-        }
+                binding.userPregnancyMonthValue.setText(formattedDate.toString())
+            }
 
-        datePicker.addOnNegativeButtonClickListener {
-            datePicker.dismiss()
+            datePicker.addOnNegativeButtonClickListener {
+                datePicker.dismiss()
+            }
         }
     }
 }

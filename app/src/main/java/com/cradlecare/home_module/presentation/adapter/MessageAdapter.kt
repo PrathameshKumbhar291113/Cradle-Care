@@ -3,6 +3,7 @@ package com.cradlecare.home_module.presentation.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.cradlecare.databinding.ItemChatBotMessagingBinding
 import com.cradlecare.utils.models.home_module.Message
@@ -17,14 +18,20 @@ class MessageAdapter(private val messageList: List<Message>) :
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val message = messageList[position]
-        if (message.sentBy == Message.SENT_BY_ME) {
-            holder.binding.leftChatView.visibility = View.GONE
-            holder.binding.rightChatView.visibility = View.VISIBLE
-            holder.binding.rightChatTextView.text = message.message
-        } else {
-            holder.binding.rightChatView.visibility = View.GONE
-            holder.binding.leftChatView.visibility = View.VISIBLE
-            holder.binding.leftChatTextView.text = message.message
+        with(holder.binding){
+            if (message.sentBy == Message.SENT_BY_ME) {
+                leftChatView.isVisible =false
+                rightChatView.isVisible = true
+                userImage.isVisible = true
+                botImage.isVisible = false
+                rightChatTextView.text = message.message
+            } else {
+                rightChatView.isVisible =false
+                leftChatView.isVisible = true
+                userImage.isVisible = false
+                botImage.isVisible = true
+                leftChatTextView.text = message.message
+            }
         }
     }
 
