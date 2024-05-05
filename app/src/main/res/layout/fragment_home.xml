@@ -11,8 +11,8 @@
         android:id="@+id/toolBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingVertical="10dp"
         android:background="@color/rose_fam_400"
+        android:paddingVertical="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -72,22 +72,22 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/kycStatusTitle"
-                android:text="Kyc Status"
-                android:textSize="20dp"
-                android:textColor="@color/grey_dark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
                 android:fontFamily="@font/archivo_semibold"
                 android:paddingStart="8dp"
-                android:layout_marginTop="24dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:text="Kyc Status"
+                android:textColor="@color/grey_dark"
+                android:textSize="20dp" />
 
             <include
                 android:id="@+id/kycHomeCard"
                 layout="@layout/inc_kyc_card_home_screen"
-                android:layout_marginTop="10dp"
-                android:layout_marginHorizontal="8dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="10dp" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/preDeliveryTitle"
@@ -103,10 +103,10 @@
             <include
                 android:id="@+id/preDeliveryDetailsCard"
                 layout="@layout/inc_pre_delivery_service_home_card"
-                android:layout_marginVertical="10dp"
-                android:layout_marginHorizontal="8dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="10dp" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tipsTitle"
@@ -118,6 +118,14 @@
                 android:text="Baby Bump Insights: Expert Tips"
                 android:textColor="@color/grey_dark"
                 android:textSize="20dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/tipsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:layout_marginHorizontal="8dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

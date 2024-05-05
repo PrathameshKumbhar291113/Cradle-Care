@@ -21,8 +21,8 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/botImage"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
         android:tint="@color/rose_fam_400"
@@ -61,8 +61,8 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/userImage"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
         android:tint="@color/pink_fam_400"

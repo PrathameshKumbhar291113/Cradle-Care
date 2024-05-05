@@ -74,7 +74,7 @@ class DobFragment : Fragment() {
 
         datePicker.addOnPositiveButtonClickListener { selectedDate ->
             // Convert the selected date to a formatted string
-            val dateFormat = SimpleDateFormat("MM/dd/yyyy", Locale.getDefault())
+            val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
             val formattedDate = dateFormat.format(Date(selectedDate))
 
             // Set the formatted date to the TextView

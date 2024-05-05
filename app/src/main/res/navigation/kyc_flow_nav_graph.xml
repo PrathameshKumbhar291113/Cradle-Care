@@ -10,4 +10,14 @@
         android:name="com.cradlecare.kyc_module.presentation.fragments.KycIntroFragment"
         android:label="fragment_kyc_intro"
         tools:layout="@layout/fragment_kyc_intro" />
+    <fragment
+        android:id="@+id/kycFormFragment"
+        android:name="com.cradlecare.kyc_module.presentation.fragments.KycFormFragment"
+        android:label="fragment_kyc_form"
+        tools:layout="@layout/fragment_kyc_form" />
+    <fragment
+        android:id="@+id/kycSuccessFragment"
+        android:name="com.cradlecare.kyc_module.presentation.fragments.KycSuccessFragment"
+        android:label="fragment_kyc_success"
+        tools:layout="@layout/fragment_kyc_success" />
 </navigation>

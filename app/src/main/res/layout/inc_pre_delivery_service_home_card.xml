@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="180dp"
         app:cardCornerRadius="20dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,6 +86,93 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/preDeliveryHomeCardIcon"
                 app:layout_constraintTop_toBottomOf="@+id/preDeliveryHomeCardSubTitle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/preDeliveryCardAfterSubscription"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:cardCornerRadius="20dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/rose_fam_500">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/preDeliveryHomeCardIconAfterSubscription"
+                android:layout_width="70dp"
+                android:layout_height="0dp"
+                android:padding="45dp"
+                android:rotationY="180"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/preDeliveryHomeCardTitleAfterSubscription"
+                app:layout_constraintHorizontal_bias="0.05"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/iv_pre_delivery_icon" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/preDeliveryHomeCardTitleAfterSubscription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/aref_ruqaa"
+                android:gravity="center"
+                android:text="Motherhood Prime"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/preDeliveryHomeCardSubTitleAfterSubscription"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/preDeliveryHomeCardIconAfterSubscription"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/preDeliveryHomeCardSubTitleAfterSubscription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:fontFamily="@font/archivo_semibold"
+                android:gravity="center"
+                android:paddingHorizontal="10dp"
+                android:text="Enjoy an Elevated Pregnancy Experience with Premium Features"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toTopOf="@id/btnExplore"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/preDeliveryHomeCardIconAfterSubscription"
+                app:layout_constraintTop_toBottomOf="@id/preDeliveryHomeCardTitleAfterSubscription" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnExplore"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/shape_round_corner_secondary_button"
+                android:fontFamily="@font/archivo_semibold"
+                android:text="Explore More"
+                android:textAllCaps="false"
+                android:textColor="@color/rose_fam_400"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/preDeliveryHomeCardIconAfterSubscription"
+                app:layout_constraintTop_toBottomOf="@+id/preDeliveryHomeCardSubTitleAfterSubscription" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -34,6 +34,8 @@ object BundleConstants{
     const val USER_PREGNANCY_MONTH = "userPregnancyMonth"
     const val BLOOD_GROUP = "bloodGroup"
     const val USER_BLOOD_GROUP = "userBloodGroup"
+    const val SUBSCRIPTION = "subscription"
+    const val IS_SUBSCRIPTION_ACTIVATED = "isSubscriptionActivated"
 }
 
 object StripeConstants{

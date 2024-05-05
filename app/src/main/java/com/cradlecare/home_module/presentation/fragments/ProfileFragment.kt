@@ -10,6 +10,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.cradlecare.SplashActivity
 import com.cradlecare.databinding.FragmentProfileBinding
+import com.cradlecare.utils.calculateAge
+import com.cradlecare.utils.formatPhoneNumber
+import com.cradlecare.utils.getInitials
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.resq360.utils.BundleConstants
@@ -50,7 +53,21 @@ class ProfileFragment : Fragment() {
     }
 
     private fun setupUserDetails() {
-        binding.incUserProfileDetails.userMobileNumber.text = fireBaseCurrentUser.phoneNumber.toString()
+        binding.incUserProfileDetails.userMobileNumber.text = formatPhoneNumber( fireBaseCurrentUser.phoneNumber.toString())
+
+        val sharePrefFullName : SharedPreferences = requireContext().getSharedPreferences(BundleConstants.NAME, Context.MODE_PRIVATE)
+        var userName = sharePrefFullName.getString(BundleConstants.USER_FULL_NAME, "")
+
+        binding.incUserProfileDetails.userFullName.text = userName.toString()
+
+
+        val sharePrefDob : SharedPreferences = requireContext().getSharedPreferences(BundleConstants.DOB, Context.MODE_PRIVATE)
+        var userDob = sharePrefDob.getString(BundleConstants.USER_DOB, "")
+
+
+        binding.incUserProfileDetails.userAge.text = calculateAge(userDob.toString()).toString()
+
+        binding.incUserProfileDetails.userNameShort.text = getInitials(userName.toString())
     }
 
     private fun logout() {

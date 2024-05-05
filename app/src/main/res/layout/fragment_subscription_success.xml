@@ -50,8 +50,8 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/subscriptionAvailedIcon"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
                 android:layout_marginTop="50dp"
                 android:padding="10dp"
                 app:layout_constraintBottom_toTopOf="@id/subscriptionActivatedTitle"
@@ -68,7 +68,7 @@
                 android:text="Subscription Activated"
                 android:textSize="30dp"
                 android:textColor="@color/grey_dark_primary"
-                android:fontFamily="@font/archivo_bold"
+                android:fontFamily="@font/inter_bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/subscriptionAvailedIcon" />
@@ -78,11 +78,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="The Subscription Activated from\n19 Apr 2024 to 19 May 2024"
+                android:text=""
                 android:textAlignment="center"
                 android:textSize="20dp"
                 android:textColor="@color/rose_fam_500"
-                android:fontFamily="@font/archivo_semibold"
+                android:fontFamily="@font/aref_ruqaa_bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/subscriptionActivatedTitle" />

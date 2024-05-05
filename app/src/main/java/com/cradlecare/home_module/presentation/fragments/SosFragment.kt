@@ -1,5 +1,6 @@
 package com.cradlecare.home_module.presentation.fragments
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
@@ -10,6 +11,7 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import com.cradlecare.R
 import com.cradlecare.databinding.FragmentSosBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
@@ -21,6 +23,7 @@ import java.util.Locale
 @AndroidEntryPoint
 class SosFragment : Fragment() {
     private lateinit var binding: FragmentSosBinding
+    private var mediaPlayer: MediaPlayer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,6 +61,9 @@ class SosFragment : Fragment() {
         if (isVisible) {
             lifecycleScope.launch {
 
+                mediaPlayer = MediaPlayer.create(requireContext(), R.raw.sos_ringtone)
+                mediaPlayer?.start()
+
                 startLoadingAnimation()
 
                 delay(5000)
@@ -85,6 +91,8 @@ class SosFragment : Fragment() {
                         binding.sosTimeLeftValue.text = "$minutes:$seconds Mins"
                         binding.sosEstimatedTimeText.text =
                             "Estimated ambulance arrival: $estimatedTime"
+                        mediaPlayer?.release()
+                        mediaPlayer = null
                     }
 
                     override fun onFinish() {
@@ -121,5 +129,11 @@ class SosFragment : Fragment() {
             handler.removeCallbacksAndMessages(null) // Stop all callbacks and messages
             // Do any additional cleanup or actions here
         }, 5000)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mediaPlayer?.release()
+        mediaPlayer = null
     }
 }
