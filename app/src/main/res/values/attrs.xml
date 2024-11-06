@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="OTPView">
         <attr name="otpLayoutType" format="integer">
-            <enum name="box" value="0"/>
-            <enum name="line" value="1"/>
+            <enum name="box" value="0" />
+            <enum name="line" value="1" />
         </attr>
-        <attr name="borderThickness" format="integer"/>
-        <attr name="spaceBetween" format="float"/>
-        <attr name="otpLength" format="integer"/>
-        <attr name="backgroundColor" format="reference|color"/>
-        <attr name="otpLayoutColor" format="reference|color"/>
+        <attr name="borderThickness" format="integer" />
+        <attr name="spaceBetween" format="float" />
+        <attr name="otpLength" format="integer" />
+        <attr name="backgroundColor" format="reference|color" />
+        <attr name="otpLayoutColor" format="reference|color" />
+        <attr name="boxBackgroundDrawable" format="reference" /> <!-- New attribute -->
     </declare-styleable>
 </resources>
